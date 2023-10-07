@@ -1,0 +1,37 @@
+body {
+  font-family: var(--fuente-principal);
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-quintenario);
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--padding-general);
+}
+
+h1 {
+  font-size: var(--tamano-fuente-h1);
+}
+
+h2 {
+  font-size: var(--tamano-fuente-h2);
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+li {
+  margin-bottom: var(--margen-general);
+}
+
+button {
+  padding: var(--padding-general);
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+  border: none;
+  border-radius: var(--radio-borde-general);
+  cursor: pointer;
+}

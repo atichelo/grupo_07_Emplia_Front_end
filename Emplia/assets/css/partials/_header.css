@@ -1,0 +1,82 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: var(--color-principal);
+  color: var(--color-terciario);
+}
+/* logo */
+.logo img {
+  height: var(--tamano-logo);
+  width: var(--ancho-logo);
+}
+
+/* Estilos para el menú */
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.menu li {
+  margin-right: 20px;
+}
+
+.menu-btn {
+  text-decoration: none;
+  font-weight: bold;
+  padding: var(--padding-general);
+  border-radius: var(--radio-borde-general);
+  font-family: var(--fuente-principal);
+  font-size: var(--tamano-fuente-p);
+  width: 150px; /* Ajustar el ancho */
+  margin-right: var(--margin-general); /* Ajustar el margen */
+}
+.menu-btn a {
+  text-decoration: none; /* Quita el subrayado */
+  color: inherit; /* Hereda el color del texto del elemento padre */
+}
+.cuenta-empresas {
+  background-color: var(--color-principal);
+  color: var(--color-terciario);
+}
+
+.cuenta-empresas:hover {
+  background-color: var(--color-secundario);
+}
+
+.publica-gratis {
+  background-color: var(--color-principal);
+  color: var(--color-secundario);
+}
+
+.publica-gratis:hover {
+  background-color: var(--color-principal);
+  color: var(--color-cuaternario);
+}
+
+.ingresar {
+  background-color: var(--color-terciario);
+  color: var(--color-secundario);
+  border: 2px solid var(--color-secundario);
+}
+
+.ingresar:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+}
+
+.crear-cuenta {
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+  border: 2px solid var(--color-terciario);
+}
+
+.crear-cuenta:hover {
+  background-color: var(--color-cuaternario);
+} 
+

@@ -1,0 +1,234 @@
+.search-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: var(--padding-general);
+  padding-bottom: var(--padding-general);
+}
+
+input[type="text"] {
+  width: var(--ancho-input-texto);
+  padding: var(--padding-general);
+  margin-right: var(--margen-general);
+  border: 1px solid var(--color-quintenario);
+  border-radius: var(--radio-borde-general);
+}
+
+.banner {
+  position: relative;
+  width: auto;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#myVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.form-wrapper {
+  position: absolute;
+  bottom: 38%;
+  left: 0%;
+  width: 98.7%;
+  height: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-principal);
+  padding: var(--padding-general);
+  margin-bottom: -12.4%; /* Agrega un margen inferior */
+}
+
+/* Estilo para el contenedor principal */
+.job-search-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-principal);
+  color: var(--color-quintenario); /* Cambiar el color a gris */
+  padding: var(--padding-general);
+  border-radius: var(--radio-borde-general);
+}
+
+.job-select,
+.location-select {
+  width: calc(var(--ancho-input-texto) - 30px);
+  height: 40px;
+  font-size: var(--tamano-fuente-p);
+  padding: var(--padding-general) 40px 10px 40px;
+  border-radius: var(--radio-borde-general);
+  border: none;
+  background-color: var(--color-terciario);
+  color: rgb(127, 126, 126);
+  cursor: pointer;
+  margin-right: 10px; /* Agregar margen derecho solo a "Puesto" */
+  display: flex;
+  align-items: center; /* Centrar el texto verticalmente */
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 5px center;
+}
+
+.job-select.job-icon {
+  background-image: url("D:/Documents/tpo-python/tpo-definitivo/assents/icons/busqueda.ico");
+  display: block;
+}
+
+.location-select.location-icon {
+  background-image: url("D:/Documents/tpo-python/tpo-definitivo/assents/icons/marcador.ico");
+  display: block;
+}
+
+.icon-input:hover,
+.job-select:hover,
+.location-select:hover {
+  background-color: var(--color-quintenario);
+}
+
+button[type="submit"] {
+  text-decoration: none;
+  font-weight: bold;
+  padding: var(--padding-general);
+  border-radius: var(--radio-borde-general);
+  font-family: var(--fuente-principal);
+  font-size: var(--tamano-fuente-p);
+  width: 150px;
+  border: 2px solid var(--color-terciario);
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+  margin-left: 0; /* Eliminar cualquier margen izquierdo */
+}
+
+button[type="submit"]:hover {
+  background-color: var(--color-cuaternario);
+  color: var(--color-terciario);
+}
+/* Estilos para la sección de logotipos */
+/* Estilos para la sección de logotipos */
+section {
+  background-color: #f8f8f8; /* Cambia el color de fondo según tus preferencias */
+  padding: 20px; /* Espaciado interior */
+  text-align: center; /* Centrar los logotipos horizontalmente */
+}
+
+.logos {
+  display:contents;
+  flex-wrap: wrap;
+  justify-content: center; /* Centrar los logos horizontalmente */
+  align-items: center; /* Centrar los logos verticalmente */
+  margin-top: var(--margen-general); /* Agrega un margen superior para separar de los select */
+  margin-bottom: 35%;
+}
+
+.logos img {
+  height: var(--tamano-logose);
+  width: var(--ancho-logose);
+  padding: var(--padding-general);
+  box-shadow: 0px 0px 20px var(--color-quintenario);
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-top: 2.7%;
+}
+.search-section input[type="text"] {
+  margin-top: calc(var(--margen-general) + 20px);
+}
+/* Estilo para la sección de empleos */
+#empleos {
+  background-color: var(--color-terciario);
+  padding: var(--padding-general);
+  border: 1px solid var(--color-quintenario);
+  border-radius: var(--radio-borde-general);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 30%; /* Ajusta el ancho según tus preferencias */
+}
+
+/* Estilo para el título "Empleos disponibles" */
+h2 {
+  font-size: var(--tamano-fuente-h2); /* Tamaño de fuente grande */
+  color: var(--color-principal); /* Color principal atractivo */
+  text-align: center; /* Centrar el texto horizontalmente */
+  margin-bottom: 20px; /* Agregar espacio inferior para separarlo de la sección siguiente */
+  padding: 10px; /* Relleno interior para que el texto no esté demasiado cerca del borde */
+  border: 2px solid var(--color-secundario); /* Borde sólido */
+  border-image: url('ruta/de/tu/imagen.png') 30 30 round; /* Imagen de borde con repetición redonda */
+  border-image-slice: 30 fill; /* Tamaño de corte de la imagen de borde */
+}
+
+
+/* Estilo para la tabla de empleos */
+table-empleos {
+  width: 100%;
+  margin-top: var(--margen-general);
+}
+
+/* Estilo para la caja de filtros */
+.filtros {
+  background-color: var(--color-terciario);
+  padding: var(--padding-general);
+  border: 1px solid var(--color-quintenario);
+  border-radius: var(--radio-borde-general);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 95%; /* Ajusta el ancho según tus preferencias */
+}
+
+/* Estilo para el título "Filtros de búsqueda" */
+.filtros h3 {
+  font-size: var(--tamano-fuente-h2);
+  padding: 10px; /* Agregar relleno para destacar */
+  background-color: var(--color-secundario); /* Fondo de color para destacar */
+  margin-bottom: 15px; /* Margen inferior para separarlo del contenido siguiente */
+  color: var(--color-terciario);
+  border-radius: var(--radio-borde-general);
+}
+
+/* Estilo para cada grupo de filtros */
+.filter-group {
+  margin-bottom: var(--margen-general);
+}
+
+/* Estilo para las etiquetas de los selects */
+.filter-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--color-secundario);
+}
+
+/* Estilo para los selects */
+.filter-group select {
+  width: 100%;
+  padding: var(--padding-general);
+  border: 1px solid var(--color-quintenario);
+  border-radius: var(--radio-borde-general);
+  background-color: var(--color-terciario);
+  color: var(--color-principal);
+  font-family: var(--fuente-principal);
+}
+
+/* Estilo para las opciones de los selects */
+.filter-group select option {
+  background-color: var(--color-terciario);
+  color: var(--color-principal);
+}
+
+/* Estilo para los selects cuando están enfocados */
+.filter-group select:focus {
+  outline: none;
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 5px rgba(4, 137, 152, 0.5);
+}
+
+/* Estilo para las etiquetas de los selects de área, modalidad y fecha de publicación */
+.area,
+.modalidad,
+.fecha-de-publicacion {
+  color: var(--color-principal);
+}
