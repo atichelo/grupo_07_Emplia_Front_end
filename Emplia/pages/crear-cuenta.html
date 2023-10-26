@@ -1,154 +1,104 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Usuario - EsteJobs</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="D:/Documents/tpo-python/tpo-definitivo/assents/css/styles.css">
-    <!-- Agregar el enlace a Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+   
+    <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
+
 <body>
-<header>
-    <div class="logo">
-        <img src="D:/Documents/tpo-python/tpo-definitivo/assents/images/Logo.png" alt="Logo del sitio" width="200" height="100">
-    </div>
-    <nav>
-        <ul class="menu">
-            <li><button class="menu-btn ingresar">Volver al inicio</button><a href= "D:\Documents\tpo-python\tpo-definitivo\index.html"</a></button> </li>
-        </ul>
-    </nav>
-        <h1>Formulario de Currículum Vitae</h1>
-    </header>
-
-    <main>
-        <section>
-            <form action="procesar_cv.php" method="POST">
-                <h2>Información de Contacto:</h2>
-                <label for="nombre">Nombre completo:</label>
-                <input type="text" id="nombre" name="nombre" required>
-
-                <label for="correo">Dirección de correo electrónico:</label>
-                <input type="email" id="correo" name="correo" required>
-
-                <label for="telefono">Número de teléfono:</label>
-                <input type="tel" id="telefono" name="telefono" required>
-
-                <label for="direccion">Dirección de residencia:</label>
-                <input type="text" id="direccion" name="direccion" required>
-
-                <h2>Resumen o perfil profesional (opcional):</h2>
-                <textarea id="resumen" name="resumen" rows="4" cols="50"></textarea>
-
-                <h2>Experiencia Laboral:</h2>
-                <!-- Puedes replicar estos campos para cada trabajo anterior -->
-                <label for="empresa1">Nombre de la empresa:</label>
-                <input type="text" id="empresa1" name="empresa1" required>
-
-                <label for="ubicacion1">Ubicación de la empresa:</label>
-                <input type="text" id="ubicacion1" name="ubicacion1" required>
-
-                <label for="puesto1">Tu puesto o cargo:</label>
-                <input type="text" id="puesto1" name="puesto1" required>
-
-                <label for="fechas1">Fechas de empleo (mes y año de inicio y finalización):</label>
-                <input type="text" id="fechas1" name="fechas1" required>
-
-                <label for="responsabilidades1">Descripción de tus responsabilidades y logros en el trabajo:</label>
-                <textarea id="responsabilidades1" name="responsabilidades1" rows="4" cols="50" required></textarea>
-
-                <!-- Puedes agregar más bloques similares para experiencia adicional -->
-
-                <h2>Educación:</h2>
-                <!-- Puedes replicar estos campos para cada nivel de educación -->
-                <label for="titulo1">Grado académico obtenido:</label>
-                <input type="text" id="titulo1" name="titulo1" required>
-
-                <label for="institucion1">Nombre de la institución educativa:</label>
-                <input type="text" id="institucion1" name="institucion1" required>
-
-                <label for="ubicacion_institucion1">Ubicación de la institución:</label>
-                <input type="text" id="ubicacion_institucion1" name="ubicacion_institucion1" required>
-
-                <label for="fecha_graduacion1">Fecha de graduación (mes y año):</label>
-                <input type="text" id="fecha_graduacion1" name="fecha_graduacion1" required>
-
-                <!-- Puedes agregar más bloques similares para educación adicional -->
-
-                <h2>Habilidades:</h2>
-                <label for="habilidades">Lista de habilidades relevantes:</label>
-                <textarea id="habilidades" name="habilidades" rows="4" cols="50" required></textarea>
-
-                <h2>Certificaciones y Cursos Adicionales:</h2>
-                <label for="certificaciones">Certificaciones profesionales:</label>
-                <textarea id="certificaciones" name="certificaciones" rows="4" cols="50"></textarea>
-
-                <label for="cursos">Cursos adicionales o de formación:</label>
-                <textarea id="cursos" name="cursos" rows="4" cols="50"></textarea>
-
-                <h2>Idiomas:</h2>
-                <label for="idiomas">Lista de idiomas y nivel de competencia:</label>
-                <textarea id="idiomas" name="idiomas" rows="4" cols="50" required></textarea>
-
-                <!-- Puedes continuar aquí con los idiomas -->
-
-                <h2>Logros y Premios (opcional):</h2>
-                <label for="logros">Logros y premios:</label>
-                <textarea id="logros" name="logros" rows="4" cols="50"></textarea>
-
-                <h2>Afiliaciones y Membresías (opcional):</h2>
-                <label for="afiliaciones">Afiliaciones y membresías:</label>
-                <textarea id="afiliaciones" name="afiliaciones" rows="4" cols="50"></textarea>
-
-                <h2>Referencias (opcional):</h2>
-                <label for="referencias">Nombres y datos de contacto de referencias:</label>
-                <textarea id="referencias" name="referencias" rows="4" cols="50"></textarea>
-
-                <button type="submit">Enviar Currículum</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <p>Tu pie de página aquí</p>
-    </footer>
-</body>
-
-</html>
-
-<main>
-    <section class="registro-usuario">
-        <div class="registro-form">
-            <h2>Registro de Usuario</h2>
-            <form action="procesar_registro.php" method="POST">
-                <div class="input-container">
-                    <input type="text" name="nombre_usuario" placeholder="Nombre de usuario" class="icon-input user-icon" required />
-                </div>
-                <div class="input-container">
-                    <input type="password" name="contrasena" placeholder="Contraseña" class="icon-input user-icon" required>
-                </div>
-                <div class="input-container">
-                    <input type="password" name="confirmar_contrasena" placeholder="Confirmar contraseña" class="icon-input user-icon" required>
-                </div>
-                <div class="input-container">
-                    <input type="text" name="nombre" placeholder="Nombre" class="icon-input user-icon" required />
-                </div>
-                <div class="input-container">
-                    <input type="text" name="apellido" placeholder="Apellido" class="icon-input user-icon" required />
-                </div>
-
-                <!-- Agregar el formulario de currículum vitae de Bootstrap -->
-                <div class="mb-3">
-                    <label for="cv" class="form-label">Currículum Vitae</label>
-                    <input type="file" class="form-control" id="cv" name="cv">
-                </div>
-
-                <!-- Aquí puedes agregar más campos para el currículum vitae -->
-                <button type="submit" class="btn btn-primary">Registrarse</button>
-            </form>
+    <header>
+        <div class="logo">
+            <img src="../assets/images/Logo.png" alt="Logo del sitio">
         </div>
-    </section>
-</main>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html"><button class="menu-btn ingresar">Volver al inicio</button></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="registro-usuario">
+            <div class="registro-form">
+                <h2>Registro de Usuario</h2>
+                <button id="google-btn" class="icono-registro"><img src="../assets/icons/googlei.ico" alt="Google Icon"></button>
+                <button id="facebook-btn" class="icono-registro"><img src="../assets/icons/facebooki.ico" alt="Facebook Icon"></button>
+                <button id="linkedin-btn" class="icono-registro"><img src="../assets/icons/linkedini.ico" alt="LinkedIn Icon"></button>
+
+                <form>
+                    <div class="input-container">
+                        <input type="texto" name="nombre_usuario" placeholder="Nombre de usuario"
+                            class="icon-input user-icon" required />
+                    </div>
+                    <div class="input-container">
+                        <input type="password" name="contrasena" placeholder="Contraseña" class="icon-input user-icon"
+                            required>
+                    </div>
+                    <div class="input-container">
+                        <input type="password" name="confirmar_contrasena" placeholder="Confirmar contraseña"
+                            class="icon-input user-icon" required>
+                    </div>
+                    <div class="input-container">
+                        <input type="texto" name="nombre" placeholder="Nombre" class="icon-input user-icon" required />
+                    </div>
+                    <div class="input-container">
+                        <input type="texto" name="apellido" placeholder="Apellido" class="icon-input user-icon"
+                            required />
+                    </div>
+                    <button type="submit" class="confirmarRegistro">Registrarse</button>
+
+                </form>
+            </div> 
+        </section>        
+    </main>
+    <footer id="footer">
+        <div class="footer-body">
+            <div class="container-f">
+                <nav>
+                    <ul class="socials">
+                        <li>
+                            <a href="http://www.instagram.com/emplia" target="_blank" title="Instagram">
+                                <img src=".././assets/icons/instagram.ico" alt="Instagram" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://youtube.com/emplia" target="_blank" title="Youtube">
+                                <img src=".././assets/icons/youtube.ico" alt="Youtube" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com/emplia" target="_blank" title="Linkedin">
+                                <img src=".././assets/icons/linkedin.ico" alt="Linkedin" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/emplia" target="_blank" title="Facebook">
+                                <img src=".././assets/icons/facebook.ico" alt="Facebook" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.twitter.com/emplia" target="_blank" title="Twitter">
+                                <img src=".././assets/icons/gorjeo.ico" alt="Twitter" class="footer-icons">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer-content">
+                    <p>© EMPLIA 2023, Todos los Derechos Reservados</p>
+                    <p>Somos la comunidad que te conecta con tu futuro.</p>
+                    <ul class="socials">
+                        <li><a href="https://www.emplia.com/privacidad">Política de privacidad</a></li>
+                        <li><a href="https://www.emplia.com/condiciones">Condiciones de uso</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type = "module" src="../assets/js/registrog.js"></script>
+    <script src="../assets/js/crea.js"></script>
 </body>
+
 </html>

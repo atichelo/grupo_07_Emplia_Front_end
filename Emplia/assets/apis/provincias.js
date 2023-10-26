@@ -1,33 +1,30 @@
-var debounceTimer;
+var temporizadorDebounce;
 
-function debouncedCargarCiudades() {
-    var previousTimer = debounceTimer;
-    debounceTimer = setTimeout(cargarCiudades, 300);
-    if (previousTimer) {
-        clearTimeout(previousTimer);
+function cargarCiudadesDebounced() {
+    var temporizadorAnterior = temporizadorDebounce;
+    temporizadorDebounce = setTimeout(cargarCiudades, 300);
+    if (temporizadorAnterior) {
+        clearTimeout(temporizadorAnterior);
     }
 }
 
 function cargarProvincias() {
-    var provinciasList = document.getElementById("provincias-list");
-    fetch("https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre")
-        .then(response => response.json())
+    var selectProvincia = document.getElementById("location-select");
+    const apiUrl = "https://apis.datos.gob.ar/georef/api/provincias?campos=id,nombre";
+    fetch(apiUrl)
+        .then(respuesta => respuesta.json())
         .then(data => {
             if (data && data.provincias) {
                 data.provincias.forEach(function (provincia) {
-                    var listItem = document.createElement("li");
-                    listItem.textContent = provincia.nombre;
-                    provinciasList.appendChild(listItem);
+                    var opcion = document.createElement("option");
+                    opcion.value = provincia.id;
+                    opcion.textContent = provincia.nombre;
+                    selectProvincia.appendChild(opcion);
                 });
             }
         })
         .catch(error => console.error("Error al cargar provincias: ", error));
 }
 
-function cargarCiudades() {
-    // Agrega aquí la lógica para cargar las ciudades correspondientes a la provincia seleccionada
-}
-
-document.getElementById("provincia-select").addEventListener("change", debouncedCargarCiudades);
-
+document.getElementById("location-select").addEventListener("change", cargarCiudadesDebounced);
 cargarProvincias();

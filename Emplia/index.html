@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,19 +11,28 @@
 <body>
     <header>
         <div class="logo">
-            <img src="assets\images\Logo.png" alt="Logo del sitio" width="200" height="100">
+            <img src="assets/images/Logo.png" alt="Logo del sitio" width="200" height="100">
         </div>
         <nav>
             <ul class="menu">
                 <li><button class="menu-btn cuenta-empresas">Cuenta empresas</button></li>
                 <li><button class="menu-btn publica-gratis">Publicá gratis</button></li>
-                <li><button class="menu-btn crear-cuenta"><a href="pages\crear-cuenta.html">Crear cuenta</a></button></li>
-                <li><button class="menu-btn ingresar">Ingresar</button></li> 
+                <li><button class="menu-btn crear-cuenta"><a href="pages/crear-cuenta.html">Crear cuenta</a></button></li>
+                <li><button class="menu-btn ingresar">Ingresar</button></li>
             </ul>
+            <button class="hamburger">&#9776;</button>
+            <div class="menu-desplegable">
+                <ul class="menuh">
+                    <li><a href="#cuenta-empresas">Cuenta empresas</a></li>
+                    <li><a href="#publica-gratis">Publicá gratis</a></li>
+                    <li><a href="pages/crear-cuenta.html">Crear cuenta</a></li>
+                    <li><a href="#ingresar">Ingresar</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
     <main>
-        <section class="banner">
+        <section id="banner" class="banner">
             <video autoplay muted loop id="myVideo">
                 <source src="assets\images\banner2.mp4" type="video/mp4">
             </video>
@@ -31,33 +41,33 @@
                     <div class="input-container">
                         <select id="job-select" class="job-select job-icon">
                             <option value=""> Puesto </option>
-                        <option value="Analista de datos">Analista de datos</option>
-                        <option value="Desarrollador web">Desarrollador web</option>
-                        <option value="Diseñador gráfico">Diseñador gráfico</option>
-                        <option value="Gerente de marketing">Gerente de marketing</option>
-                        <option value="Ingeniero de software">Ingeniero de software</option>
-                        <option value="Recursos humanos">Recursos humanos</option>
-                        <option value="Ventas">Ventas</option>
-                      </select>
+                            <option value="Analista de datos">Analista de datos</option>
+                            <option value="Desarrollador web">Desarrollador web</option>
+                            <option value="Diseñador gráfico">Diseñador gráfico</option>
+                            <option value="Gerente de marketing">Gerente de marketing</option>
+                            <option value="Ingeniero de software">Ingeniero de software</option>
+                            <option value="Recursos humanos">Recursos humanos</option>
+                            <option value="Ventas">Ventas</option>
+                        </select>
                     </div>
                     <div class="input-container">
                         <select id="location-select" class="location-select location-icon">
                             <option value="">Ubicación</option>
-                        <option value="Buenos Aires">Buenos Aires</option>
-                        <option value="Córdoba">Córdoba</option>
-                        <option value="Rosario">Rosario</option>
-                        <option value="Mendoza">Mendoza</option>
-                        <option value="Santa Fe">Santa Fe</option>
-                        <option value="Mar del Plata">Mar del Plata</option>
-                        <option value="La Plata">La Plata</option>
-                      </select>
-                      <script src="provincias.js"></script>
+                            <option value="Buenos Aires">Buenos Aires</option>
+                            <option value="Córdoba">Córdoba</option>
+                            <option value="Rosario">Rosario</option>
+                            <option value="Mendoza">Mendoza</option>
+                            <option value="Santa Fe">Santa Fe</option>
+                            <option value="Mar del Plata">Mar del Plata</option>
+                            <option value="La Plata">La Plata</option>
+                        </select>
+                        <script src="provincias.js"></script>
                     </div>
-                <button type="submit" class="button-search">Buscar empleo</button>
+                    <button type="submit" class="button-search">Buscar empleo</button>
                 </form>
             </div>
         </section>
-        <section>
+        <section id="logos">
             <div class="logos">
                 <img src="assets/images/accenture.png" alt="Logo 1">
                 <img src="assets/images/aes.png" alt="Logo 2">
@@ -68,170 +78,200 @@
                 <img src="assets/images/kpmg.png" alt="Logo 7">
             </div>
         </section>
-        <h2>Empleos disponibles</h2>
-        <section id="empleos" class="empleos">
-            <!-- Componente para la tabla -->
-            <table-empleos :empleos="empleosFiltrados"></table-empleos>
-        
-            <div class="filtros">
-                <h3>Filtros de búsqueda</h3>
-                <div class="filter-group">
-                    <label for="area" class="area">Área</label>
-                    <select id="area" v-model="filtro.area" class="area">
-                        <option value="">Todas las áreas</option>
-                        <option value="administracion-contabilidad-y-finanzas">Administración, Contabilidad y Finanzas</option>
-                        <option value="comercial-ventas-y-negocios">Comercial, Ventas y Negocios</option>
-                        <option value="produccion-y-manufactura">Producción y Manufactura</option>
-                        <option value="oficios-y-otros">Oficios y Otros</option>
-                        <option value="abastecimiento-y-logistica">Abastecimiento y Logística</option>
-                        <option value="salud-medicina-y-farmacia">Salud, Medicina y Farmacia</option>
-                        <option value="gastronomia-y-turismo">Gastronomía y Turismo</option>
-                        <option value="recursos-humanos-y-capacitacion">Recursos Humanos y Capacitación</option>
-                        <option value="atencion-al-cliente-call-center-y-telemarketing">Atención al Cliente, Call Center y Telemarketing</option>
-                        <option value="ingenierias">Ingenierías</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="modalidad-de-trabajo" class="modalidad">Modalidad</label>
-                    <select id="modalidad-de-trabajo" v-model="filtro.modalidad" class="modalidad">
-                        <option value="">Todas las modalidades</option>
-                        <option value="presencial">Presencial</option>
-                        <option value="hibrido">Híbrido</option>
-                        <option value="remoto">Remoto</option>
-                        <option value="desde-cualquier-lugar-del-mundo">Desde cualquier lugar del mundo</option>
-                    </select>
-                </div>
-                <div class="filter-group">
-                    <label for="fecha-de-publicacion" class="fecha-de-publicacion">Fecha de publicación</label>
-                    <select id="fecha-de-publicacion" v-model="filtro.fecha_publicacion" class="fecha-de-publicacion">
-                        <option value="">Todas las fechas</option>
-                        <option value="hoy">Hoy</option>
-                        <option value="ayer">Ayer</option>
-                        <option value="menor-a-3-dias">Menor a 3 días</option>
-                        <option value="menor-a-4-dias">Menor a 4 días</option>
-                        <option value="menor-a-5-dias">Menor a 5 días</option>
-                        <option value="menor-a-6-dias">Menor a 6 días</option>
-                        <option value="menor-a-7-dias">Menor a 1 semana</option>
-                        <option value="menor-a-15-dias">Menor a 15 días</option>
-                    </select>
-                </div>
+        <div class="contenedor-principal">
+            <div class="container">
+                <section id="empleos" class="empleos">
+                    <h1>Empleos de hoy</h1>
+                    <!-- Componentes para la tabla -->
+                    <table-empleos :empleos="empleosFiltrados"></table-empleos>
+                    <div class="filtros">
+                        <h1>Filtros de búsqueda</h1>
+                        <div class="filter-group">
+                            <label for="area" class="area">Área</label>
+                            <select id="area" v-model="filtro.area" class="area">
+                                <option value="">Todas las áreas</option>
+                                <option value="administracion-contabilidad-y-finanzas">Administración, Contabilidad y
+                                    Finanzas
+                                </option>
+                                <option value="comercial-ventas-y-negocios">Comercial, Ventas y Negocios</option>
+                                <option value="produccion-y-manufactura">Producción y Manufactura</option>
+                                <option value="oficios-y-otros">Oficios y Otros</option>
+                                <option value="abastecimiento-y-logistica">Abastecimiento y Logística</option>
+                                <option value="salud-medicina-y-farmacia">Salud, Medicina y Farmacia</option>
+                                <option value="gastronomia-y-turismo">Gastronomía y Turismo</option>
+                                <option value="recursos-humanos-y-capacitacion">Recursos Humanos y Capacitación</option>
+                                <option value="atencion-al-cliente-call-center-y-telemarketing">Atención al Cliente, Call
+                                    Center y
+                                    Telemarketing</option>
+                                <option value="ingenierias">Ingenierías</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="modalidad-de-trabajo" class="modalidad">Modalidad</label>
+                            <select id="modalidad-de-trabajo" v-model="filtro.modalidad" class="modalidad">
+                                <option value="">Todas las modalidades</option>
+                                <option value="presencial">Presencial</option>
+                                <option value="hibrido">Híbrido</option>
+                                <option value="remoto">Remoto</option>
+                                <option value="desde-cualquier-lugar-del-mundo">Desde cualquier lugar del mundo</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="fecha-de-publicacion" class="fecha-de-publicacion">Fecha de publicación</label>
+                            <select id="fecha-de-publicacion" v-model="filtro.fecha_publicacion" class="fecha-de-publicacion">
+                                <option value="">Todas las fechas</option>
+                                <option value="hoy">Hoy</option>
+                                <option value="ayer">Ayer</option>
+                                <option value="menor-a-3-dias">Menor a 3 días</option>
+                                <option value="menor-a-4-dias">Menor a 4 días</option>
+                                <option value="menor-a-5-dias">Menor a 5 días</option>
+                                <option value="menor-a-6-dias">Menor a 6 días</option>
+                                <option value="menor-a-7-dias">Menor a 1 semana</option>
+                                <option value="menor-a-15-dias">Menor a 15 días</option>
+                            </select>
+                        </div>
+                        <button class="verSeleccion">Ver selección</button>
+                    </div>
+                </section>
             </div>
-        </section>        
-          
-        <h2>Ofertas destacadas</h2>
-        <ul>
-            <li>
-                <h3>Desarrollador web</h3>
-                <p>Buscamos un desarrollador web con experiencia en HTML, CSS y JavaScript para trabajar en proyectos innovadores.</p>
-                <p><strong>Empresa:</strong> Emplia</p>
-                <p><strong>Fecha:</strong> 23/09/2023</p>
-                <button>Ver más</button>
-            </li>
-            <li>
-                <h3>Diseñador gráfico</h3>
-                <p>Buscamos un diseñador gráfico con creatividad y dominio de Photoshop e Illustrator para crear logos, banners y flyers.</p>
-                <p><strong>Empresa:</strong> PixelArt</p>
-                <p><strong>Fecha:</strong> 22/09/2023</p>
-                <button>Ver más</button>
-            </li>
-            <li>
-                <h3>Redactor de contenidos</h3>
-                <p>Buscamos un redactor de contenidos con excelente ortografía y gramática, y conocimientos de SEO y marketing digital.</p>
-                <p><strong>Empresa:</strong> Contento</p>
-                <p><strong>Fecha:</strong> 21/09/2023</p>
-                <button>Ver más</button>
-            </li>
-        </ul>
-    </section>
-    <section>
-        <h2>Empresas que buscan candidatos</h2>
-        <ul>
-            <li>
-                <img src="Logo.png" alt="Logo de Emplia">
-                <h3>Emplia</h3>
-                <p><strong>Sector:</strong> Tecnología</p>
-                <button>Ver ofertas</button>
-            </li>
-            <li>
-                <img src="pixelart-logo.png" alt="Logo de PixelArt">
-                <h3>PixelArt</h3>
-                <p><strong>Sector:</strong> Diseño</p>
-                <button>Ver ofertas</button>
-            </li>
-            <li>
-                <img src="contento-logo.png" alt="Logo de Contento">
-                <h3>Contento</h3>
-                <p><strong>Sector:</strong> Comunicación</p>
-                <button>Ver ofertas</button>
-            </li>
-        </ul>
-    </section>
-    <section>
-        <h3>Testimonios de usuarios satisfechos</h3>
-        <ul>
-            <li>
-                <img src="ana.jpg" alt="Foto de Ana">
-                <h4>Ana</h4>
-                <p><strong>Cargo:</strong> Desarrolladora web</p>
-                <q>Gracias a Emplia encontré el trabajo de mis sueños en una empresa increíble. Recomiendo este sitio a todos los que buscan empleo.</q>
-            </li>
-            <li>
-                <img src="luis.jpg" alt="Foto de Luis">
-                <h4>Luis</h4>
-                <p><strong>Cargo:</strong> Diseñador gráfico</p>
-                <q>Emplia me ayudó a conectar con las mejores oportunidades laborales del sector del diseño. Estoy muy contento con el servicio y la atención.</q>
-            </li>
-            <li>
-                <img src="maria.jpg" alt="Foto de María">
-                <h4>María</h4>
-                <p><strong>Cargo:</strong> Redactora de contenidos</p>
-                <q>Emplia es una plataforma muy útil y fácil de usar. Me permitió acceder a ofertas de trabajo que se ajustaban a mi perfil y a mis intereses.</q>
-            </li>
-        </ul>
-    </section>
-</main>
-<footer id="footer">
-    <div class="footer-body">
-        <div class="container">
-            <nav>
-                <ul class="socials">
+            <section id="empresa" class="empresa">
+                <h1>Empresas que buscan candidatos</h1>
+                    <div class="empresa-cont">
+                        <img class="empresa-logo" src="./assets/images/Logoe.png" alt="Logo de Emplia">
+                        <h2 class="empresa-nombre">Emplia</h2>
+                        <p class="empresa-sectore"><strong>Sector:</strong> Tecnología</p>
+                        <button class="empresa-boton">Ver oferta</button>
+                    </div>
+                    <div class="empresa-cont">
+                        <img class="empresa-logo" src="./assets/images/pixelcraft.png" alt="Logo de Pixelcraft">
+                        <h2 class="empresa-nombre">Pixel Craft</h2>
+                        <p class="empresa-sectorp"><strong>Sector:</strong> Diseño</p>
+                        <button class="empresa-boton">Ver oferta</button>
+                    </div>
+                    <div class="empresa-cont">
+                        <img class="empresa-logo" src="./assets/images/contento.png" alt="Logo de Contento">
+                        <h2 class="empresa-nombre">Contento</h2>
+                        <p class="empresa-sector"><strong>Sector:</strong> Comunicación</p>
+                        <button class="empresa-boton">Ver oferta</button>
+                    </div>
+        </div>
+            </section>
+            <section id="destacados" class="destacados">
+                <h1>Ofertas destacadas</h1>
+                <a href="URL" class="destacado1 btn-destacado">
+                    <h2>Desarrollador web</h2>
+                    <p>Buscamos un desarrollador web con experiencia en HTML, CSS y JavaScript para trabajar en proyectos innovadores.</p>
+                    <p><strong>Empresa:</strong> Emplia</p>
+                    <p><strong>Fecha:</strong> 23/11/2023</p>
+                </a>
+                <a href="URL" class="destacado2 btn-destacado">
+                    <h2>Analista de datos</h2>
+                    <p>Buscamos un analista de datos con experiencia en Python, SQL y R para trabajar en proyectos de
+                        ciencia de
+                          datos.</p>
+                    <p><strong>Empresa:</strong> Datalytics</p>
+                    <p><strong>Fecha:</strong> 22/11/2023</p>
+                </a>
+                <a href="URL" class="destacado3 btn-destacado">
+                    <h2>Diseñador de productos</h2>
+                    <p>Buscamos un diseñador de productos con experiencia en UX/UI para trabajar en el desarrollo de
+                        nuevos
+                        proyectos.</p>
+                    <p><strong>Empresa:</strong> Innova</p>
+                    <p><strong>Fecha:</strong> 21/11/2023</p>
+                </a>
+                <a href="URL" class="destacado4 btn-destacado">
+                    <h2>Redactor de marketing</h2>
+                    <p>Buscamos un redactor de marketing con experiencia en SEO y copywriting para crear
+                        contenido para redes sociales y sitios web.</p>
+                    <p><strong>Empresa:</strong> Marketing Digital</p>
+                    <p><strong>Fecha:</strong> 20/11/2023</p>
+                </a>
+                <a href="URL" class="destacado5 btn-destacado">
+                    <h2>Desarrollador de videojuegos</h2>
+                    <p>Buscamos desarrollador de videojuegos con experiencia en Unity para crear un innovador y 
+                        emocionante nuevo juego.</p>
+                    <p><strong>Empresa:</strong> Gaming Studio</p>
+                    <p><strong>Fecha:</strong> 19/11/2023</p>
+                </a>
+                <a href="URL" class="destacado6 btn-destacado">
+                    <h2>Ingeniero de sistemas</h2>
+                    <p>Buscamos ingeniero de sistemas con experiencia en redes, seguridad y cloud computing 
+                        para desarrollar un nuevo sistema.</p>
+                    <p><strong>Empresa:</strong> Tecnología</p>
+                    <p><strong>Fecha:</strong> 18/11/2023</p>
+                </a>
+            </section>
+            <section class="testimonios">
+                <h1>Testimonios de usuarios satisfechos</h1>
+                <ul>
                     <li>
-                        <a href="http://www.instagram.com/emplia" target="_blank" title="Instagram">
-                            <img src="assets/icons/instagram.ico" alt="Instagram" class="footer-icons">
-                        </a>
+                        <img src="assets\images\ana.jpg" alt="Foto de Ana">
+                        <h4>Ana</h4>
+                        <p><strong>Cargo:</strong> Desarrolladora web</p>
+                        <q>Gracias a Emplia encontré el trabajo de mis sueños en una empresa increíble. Recomiendo este
+                            sitio a todos los que buscan empleo.</q>
                     </li>
                     <li>
-                        <a href="http://youtube.com/emplia" target="_blank" title="Youtube">
-                            <img src="assets/icons/youtube.ico" alt="Youtube" class="footer-icons">
-                        </a>
+                        <img src="assets\images\luis1.jpg" alt="Foto de Luis">
+                        <h4>Luis</h4>
+                        <p><strong>Cargo:</strong> Diseñador gráfico</p>
+                        <q>Emplia me ayudó a conectar con las mejores oportunidades laborales del sector del diseño.
+                            Estoy muy contento con el servicio y la atención.</q>
                     </li>
                     <li>
-                        <a href="http://www.linkedin.com/emplia" target="_blank" title="Linkedin">
-                            <img src="assets/icons/linkedin.ico" alt="Linkedin" class="footer-icons">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.facebook.com/emplia" target="_blank" title="Facebook">
-                            <img src="assets/icons/facebook.ico" alt="Facebook" class="footer-icons">
-                        </a>
-                    </li>
-                    <li>
-                        <a href="http://www.twitter.com/emplia" target="_blank" title="Twitter">
-                            <img src="assets/icons/gorjeo.ico" alt="Twitter" class="footer-icons">
-                        </a>
+                        <img src="assets\images\maria1.jpg" alt="Foto de María">
+                        <h4>María</h4>
+                        <p><strong>Cargo:</strong> Redactora de contenidos</p>
+                        <q>Emplia es una plataforma muy útil y fácil de usar. Me permitió acceder a ofertas de trabajo
+                            que se ajustaban a mi perfil y a mis intereses.</q>
                     </li>
                 </ul>
-            </nav>
-            <div class="footer-content">
-                <p>© EMPLIA 2023, Todos los Derechos Reservados</p>
-                <p>Somos la comunidad que te conecta con tu futuro.</p>
-                <ul class="socials">
-                    <li><a href="https://www.emplia.com/privacidad">Política de privacidad</a></li>
-                    <li><a href="https://www.emplia.com/condiciones">Condiciones de uso</a></li>
-                </ul>
+            </section>            
+    </main>
+    <footer id="footer">
+        <div class="footer-body">
+            <div class="container-f">
+                <nav>
+                    <ul class="socials">
+                        <li>
+                            <a href="http://www.instagram.com/emplia" target="_blank" title="Instagram">
+                                <img src="assets/icons/instagram.ico" alt="Instagram" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://youtube.com/emplia" target="_blank" title="Youtube">
+                                <img src="assets/icons/youtube.ico" alt="Youtube" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com/emplia" target="_blank" title="Linkedin">
+                                <img src="assets/icons/linkedin.ico" alt="Linkedin" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/emplia" target="_blank" title="Facebook">
+                                <img src="assets/icons/facebook.ico" alt="Facebook" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.twitter.com/emplia" target="_blank" title="Twitter">
+                                <img src="assets/icons/gorjeo.ico" alt="Twitter" class="footer-icons">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer-content">
+                    <p>© EMPLIA 2023, Todos los Derechos Reservados</p>
+                    <p>Somos la comunidad que te conecta con tu futuro.</p>
+                    <ul class="socials">
+                        <li><a href="https://www.emplia.com/privacidad">Política de privacidad</a></li>
+                        <li><a href="https://www.emplia.com/condiciones">Condiciones de uso</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
+
 </html>

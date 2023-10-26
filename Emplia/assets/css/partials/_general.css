@@ -2,12 +2,7 @@ body {
   font-family: var(--fuente-principal);
   margin: 0;
   padding: 0;
-  background-color: var(--color-quintenario);
-}
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--padding-general);
+  background-color: var(--color-quinario);
 }
 
 h1 {
@@ -34,4 +29,5 @@ button {
   border: none;
   border-radius: var(--radio-borde-general);
   cursor: pointer;
+  border: 2px solid var(--color-terciario);
 }

@@ -2,10 +2,10 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   background-color: var(--color-principal);
   color: var(--color-terciario);
 }
+
 /* logo */
 .logo img {
   height: var(--tamano-logo);
@@ -34,12 +34,15 @@ header {
   font-family: var(--fuente-principal);
   font-size: var(--tamano-fuente-p);
   width: 150px; /* Ajustar el ancho */
-  margin-right: var(--margin-general); /* Ajustar el margen */
+  margin-right: var(--margen-general); /* Ajustar el margen */
+  margin-top: 5px;
 }
+
 .menu-btn a {
   text-decoration: none; /* Quita el subrayado */
   color: inherit; /* Hereda el color del texto del elemento padre */
 }
+
 .cuenta-empresas {
   background-color: var(--color-principal);
   color: var(--color-terciario);
@@ -80,3 +83,97 @@ header {
   background-color: var(--color-cuaternario);
 } 
 
+/* Para tablets */
+@media (max-width: 768px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu li {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Para teléfonos */
+@media (max-width: 480px) {
+  .menu {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .menu li {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+/* Estilo para el menú desplegable */
+.menu-desplegable {
+  display: none;
+}
+
+.hamburger:focus + .menu-desplegable,
+.menu-desplegable:focus-within {
+  display: block;
+}
+
+.menuh {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menuh li {
+  margin-bottom: var(--margin-general);
+}
+
+.menuh li a {
+  display:inline;
+  text-decoration: none;
+  color: var(--color-quinario);
+  font-size: var(--tamano-fuente-p)
+
+}
+
+/* Estilo para el botón del menú hamburguesa */
+.hamburger {
+  font-size: 30px;
+  display: none;
+}
+
+/* Estilo para el menú cuando está oculto */
+.menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 5px;
+}
+
+/* Mostrar el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+  
+ /* Mostrar el botón del menú hamburguesa */
+ .hamburger {
+    display:block; 
+ }
+
+ /* Ocultar el menú principal en pantallas pequeñas */
+ .menu { 
+    display:none; 
+ }
+
+ /* Mostrar el menú desplegable cuando se hace clic en el botón hamburguesa */
+ .hamburger:focus + .menu-desplegable,
+ .menu-desplegable:focus-within { 
+    display:block; 
+ }
+}
+
+
+/* Para pantallas grandes */
+@media (min-width: 1000px) {
+  .hamburger,
+  .menuh {
+    display: none;
+  }
+}

@@ -3,15 +3,16 @@
   --color-secundario: #048998;
   --color-terciario: #ffff;
   --color-cuaternario: #69e5f2;
-  /* color de hover */
-  --color-quintenario: #e0e0e0;
+  --color-quinario: #f5f5f5;
   --color-sextenario: #0a0926de;
-
+  --color-septenario: #0489988d;
+  --color-octonario: #808080;
 
   --fuente-principal: Arial, sans-serif;
 
-  --tamano-fuente-h1: 24px;
-  --tamano-fuente-h2: 20px;
+  --tamano-fuente-h1: 20px;
+  --tamano-fuente-h2: 18px;
+  --tamano-fuente-h3: 16px;
   --tamano-fuente-p: 14px;
 
   --tamano-logo: 50%;

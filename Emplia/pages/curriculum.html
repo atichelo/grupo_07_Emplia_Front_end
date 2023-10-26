@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Vitae - EsteJobs</title>
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../assets/images/Logo.png" alt="Logo del sitio">
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="../index.html"><button class="menu-btn ingresar">Volver al inicio</button></a></li>
+            </ul>
+        </nav>
+    </header>
+        <main>
+            <section class="section-c">
+                <h1 class="display-4">Formulario de Currículum Vitae</h1>
+                <form onsubmit="guardarDatos(event)">
+                    <div id="step1" class="step-form active">
+                        <h2>Información de Contacto:</h2>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombres:</label>
+                            <input type="text" id="nombre" name="nombre" required class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellido" class="form-label">Apellido:</label>
+                            <input type="text" id="apellido" name="apellido" required class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="correo" class="form-label">Dirección de correo electrónico:</label>
+                            <input type="email" id="correo" name="correo" required class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Número de teléfono:</label>
+                            <input type="tel" id="telefono" name="telefono" required class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label for="direccion" class="form-label">Dirección de residencia:</label>
+                            <input type="text" id="direccion" name="direccion" required class="form-control">
+                        </div>
+                        <button onclick="nextStep(2)">Siguiente</button>
+                    </div>
+                    <div id="step2" class="step-form">
+                        <h2>Perfil profesional (opcional):</h2>
+                        <div class="mb-3">
+                            <label for="resumen" class="form-label"></label>
+                            <textarea id="resumen" name="resumen" rows="4" class="form-control"></textarea>
+                        </div>
+                        <button onclick="previousStep(1)">Anterior</button>
+                        <button onclick="nextStep(3)">Siguiente</button>
+                    </div>
+                    <div id="step3" class="step-form">
+                        <h2>Experiencia Laboral:</h2>
+                        <!-- Experiencia laboral 1 -->
+                        <div class="mb-3">
+                            <label for="empresa1" class="form-label">Nombre de la empresa:</label>
+                            <input type="text" id="empresa1" name="empresa1" class="form-control">
+                            <label for="puesto1" class="form-label">Puesto:</label>
+                            <input type="text" id="puesto1" name="puesto1" class="form-control">
+                            <label for="fechas1" class="form-label">Fechas de inicio y fin:</label>
+                            <input type="text" id="fechas1" name="fechas1" class="form-control">
+                            <label for="descripcion1" class="form-label">Descripción del trabajo:</label>
+                            <textarea id="descripcion1" name="descripcion1" rows="4" class="form-control"></textarea>
+                        </div>
+                        <!-- Experiencia laboral 2 -->
+                        <div class="mb-3">
+                            <label for="empresa2" class="form-label">Nombre de la empresa:</label>
+                            <input type="text" id="empresa2" name="empresa2" class="form-control">
+                            <label for="puesto2" class="form-label">Puesto:</label>
+                            <input type="text" id="puesto2" name="puesto2" class="form-control">
+                            <label for="fechas2" class="form-label">Fechas de inicio y fin:</label>
+                            <input type="text" id="fechas2" name="fechas2" class="form-control">
+                            <label for="descripcion2" class="form-label">Descripción del trabajo:</label>
+                            <textarea id="descripcion2" name="descripcion2" rows="4" class="form-control"></textarea>
+                        </div>
+                        <!-- Experiencia laboral 3 -->
+                        <div class="mb-3">
+                            <label for="empresa3" class="form-label">Nombre de la empresa:</label>
+                            <input type="text" id="empresa3" name="empresa3" class="form-control">
+                            <label for="puesto3" class="form-label">Puesto:</label>
+                            <input type="text" id="puesto3" name="puesto3" class="form-control">
+                            <label for="fechas3" class="form-label">Fechas de inicio y fin:</label>
+                            <input type="text" id="fechas3" name="fechas3" class="form-control">
+                            <label for="descripcion3" class="form-label">Descripción del trabajo:</label>
+                            <textarea id="descripcion3" name="descripcion3" rows="4" class="form-control"></textarea>
+                        </div>
+                        <button onclick="previousStep(2)">Anterior</button>
+                        <button onclick="nextStep(4)">Siguiente</button>
+                    </div>
+                    <div id="step4" class="step-form">
+                        <h2>Educación</h2>
+                        <!-- Nivel de educación secundario -->
+                        <div class="mb-3">
+                            <label for="titulo2" class="form-label">Título obtenido (Educación Secundaria):</label>
+                            <input type="text" id="titulo2" name="titulo2" class="form-control" placeholder="Ej. Diploma de Educación Secundaria">
+                            <label for="institucion2" class="form-label">Institución:</label>
+                            <input type="text" id="institucion2" name=="institucion2"class= "form-control">
+                            <label for= "inicio2"class= "form-label">Fecha de inicio:</label>
+                            <input type= "date"id= "inicio2"name== "inicio2"class= "form-control">
+                            <label for= "fin2"class= "form-label">Fecha de finalización (si corresponde):</label>
+                            <input type= "date"id= "fin2"name== "fin2"class= "form-control">
+                        </div>
+                        <!-- Nivel de educación terciario o universitario -->
+                        <div class= "mb-3">
+                            <label for= "titulo3"class= "form-label">Título obtenido (Educación Terciaria/Universitaria):</label>
+                            <input type= "text"id= "titulo3"name== "titulo3"class= "form-control">
+                            <label for= "institucion3"class= "form-label">Institución:</label>
+                            <input type= "text"id= "institucion3"name== "institucion3"class= "form-control">
+                            <label for= "inicio3"class= "form-label">Fecha de inicio:</label>
+                            <input type= "date"id= "inicio3"name== "inicio3"class= "form-control">
+                            <label for="fin3" class="form-label">Fecha de finalización (si corresponde):</label>
+                            <input type="date" id="fin3" name="fin3" class="form-control">
+                            <!-- Otros estudios -->
+                            <div class="mb-3">
+                                <label for="titulo4" class="form-label">Otros estudios:</label>
+                                <input type="text" id="titulo4" name="titulo4" class="form-control">
+                                <label for="institucion4" class="form-label">Institución:</label>
+                                <input type="text" id="institucion4" name="institucion4" class="form-control">
+                                <label for="inicio4" class="form-label">Fecha de inicio:</label>
+                                <input type="date" id="inicio4" name="inicio4" class="form-control">
+                                <label for="fin4" class="form-label">Fecha de finalización (si corresponde):</label>
+                                <input type="date" id="fin4" name=="fin4"class= "form-control">
+                            </div>
+                        <button onclick="previousStep(3)">Anterior</button>
+                        <button onclick="nextStep(5)">Siguiente</button>
+                    </div>
+                    <div id="step5" class="step-form">
+                        <h2>Habilidades:</h2>
+                        <div class="mb-3">
+                            <label for="habilidades" class="form-label">Lista de habilidades relevantes:</label>
+                            <textarea id="habilidades" name="habilidades" rows="4" class="form-control"></textarea>
+                        </div>
+                        <button onclick="previousStep(4)">Anterior</button>
+                        <button onclick="nextStep(6)">Siguiente</button>
+                    </div>
+                    <div id="step6" class="step-form">
+                        <h2>Certificaciones y Cursos Adicionales:</h2>
+                        <div class="mb-3">
+                            <label for="certificaciones" class="form-label">Certificaciones profesionales:</label>
+                            <textarea id="certificaciones" name="certificaciones" rows="4" class="form-control"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label for="cursos" class="form-label">Cursos adicionales o de formación:</label>
+                            <textarea id="cursos" name="cursos" rows="4" class="form-control"></textarea>
+                        </div>
+                        <h2>Idiomas:</h2>
+                        <div class="mb-3">
+                            <label for="idiomas" class="form-label">Lista de idiomas y nivel de competencia:</label>
+                            <textarea id="idiomas" name="idiomas" rows="4" class="form-control"></textarea>
+                        </div>
+                        <button onclick="previousStep(5)">Anterior</button>
+                        <button onclick="nextStep(7)">Siguiente</button>
+                    </div>                    
+                    <div id="step7" class="step-form">
+                        <h2>Logros y Premios (opcional):</h2>
+                        <div class="mb-3">
+                            <label for="logros" class="form-label">Logros y premios:</label>
+                            <textarea id="logros" name="logros" rows="4" class="form-control"></textarea>
+                        </div>
+                        <h2>Referencias:</h2>
+                        <div class="mb-3">
+                            <label for="referencias" class="form-label">Nombres y datos de contacto de referencias:</label>
+                            <textarea id="referencias" name="referencias" rows="4" class="form-control"></textarea>
+                            <div class="mb-3">
+                                <label for="cv" class="form-label">Currículum Vitae (Adjuntar archivo PDF):</label>
+                                <input type="file" class="form-control" id="cv" name="cv">
+                            </div>
+                        </div>
+                        <button onclick="previousStep(6)">Anterior</button>
+                        <button type="submit" class="btn btn-primary">Enviar Currículum</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    <footer id="footer">
+        <div class="footer-body">
+            <div class="container-f">
+                <nav>
+                    <ul class="socials">
+                        <li>
+                            <a href="http://www.instagram.com/emplia" target="_blank" title="Instagram">
+                                <img src=".././assets/icons/instagram.ico" alt="Instagram" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://youtube.com/emplia" target="_blank" title="Youtube">
+                                <img src=".././assets/icons/youtube.ico" alt="Youtube" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.linkedin.com/emplia" target="_blank" title="Linkedin">
+                                <img src=".././assets/icons/linkedin.ico" alt="Linkedin" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.facebook.com/emplia" target="_blank" title="Facebook">
+                                <img src=".././assets/icons/facebook.ico" alt="Facebook" class="footer-icons">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="http://www.twitter.com/emplia" target="_blank" title="Twitter">
+                                <img src=".././assets/icons/gorjeo.ico" alt="Twitter" class="footer-icons">
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="footer-content">
+                    <p>© EMPLIA 2023, Todos los Derechos Reservados</p>
+                    <p>Somos la comunidad que te conecta con tu futuro.</p>
+                    <ul class="socials">
+                        <li><a href="https://www.emplia.com/privacidad">Política de privacidad</a></li>
+                        <li><a href="https://www.emplia.com/condiciones">Condiciones de uso</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+<script src=".././assets/js/step_cv.js"></script>
+<script src=".././assets/js/datos_cv.js"></script>
+</body>
+</html>

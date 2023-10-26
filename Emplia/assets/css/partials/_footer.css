@@ -4,7 +4,7 @@ footer {
     font-family: var(--fuente-principal);
     padding: var(--padding-general);
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
