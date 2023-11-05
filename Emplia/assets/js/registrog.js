@@ -1,52 +1,30 @@
-const firebase = require("firebase/app");
-require("firebase/auth");
-
+/// Configuración de Firebase
 var firebaseConfig = {
-    apiKey: "tu API key",
-    authDomain: "tu authDomain",
-    projectId: "tu projectId",
-    storageBucket: "tu storageBucket",
-    messagingSenderId: "tu messagingSenderId",
-    appId: "tu appId"
+    apiKey: "AIzaSyC7mEavo7s6INFgGovCWmLKd7wAQnzp-x8",
+    authDomain: "emplia.firebaseapp.com",
+    projectId: "emplia",
+    storageBucket: "emplia.appspot.com",
+    messagingSenderId: "333111552452",
+    appId: "1:333111552452:web:5681e59f2d84271ff4dc91",
+    measurementId: "G-Q1P93ETCW8"
 };
 
-// Inicializa Firebase
+// Inicializar Firebase
 firebase.initializeApp(firebaseConfig);
 
-document.getElementById('google-btn').addEventListener('click', function() {
-    //Inicializa el proveedor de Google
-    var provider = new GoogleAuthProvider();
+// Proveedor de Google
+var provider = new firebase.auth.GoogleAuthProvider();
 
-    // Inicializa Firebase Auth
-    var auth = getAuth();
-
-    // Inicia el proceso de autenticación
-    signInWithPopup(auth, provider)
-        .then((result) => {
-            // Esto te da un token de acceso de Google. Puedes usarlo para acceder a la API de Google.
-            var credential = GoogleAuthProvider.credentialFromResult(result);
-            var token = credential.accessToken;
-
-            // La información del usuario que ha iniciado sesión
-            var user = result.user;
-
-            console.log(user);  // Imprime la información del usuario
-
-            // ...
-        }).catch((error) => {
-            // Maneja los errores aquí.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-
-            console.log(`Error Code: ${errorCode}`);  // Imprime el código de error
-            console.log(`Error Message: ${errorMessage}`);  // Imprime el mensaje de error
-
-            // La dirección de correo electrónico de la cuenta del usuario que da el error.
-            var email = error.email;
-
-            // El tipo de cuenta del usuario.
-            var credential = GoogleAuthProvider.credentialFromError(error);
-
-            // ...
-        });
+// Iniciar sesión con Google
+firebase.auth().signInWithPopup(provider).then(function(result) {
+    // Token de acceso de Google
+    var token = result.credential.accessToken;
+    // Información del usuario
+    var user = result.user;
+    console.log(token, user);
+}).catch(function(error) {
+    // Manejar errores aquí
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.log(errorCode, errorMessage);
 });

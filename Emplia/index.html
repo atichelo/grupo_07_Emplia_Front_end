@@ -18,7 +18,7 @@
                 <li><button class="menu-btn cuenta-empresas">Cuenta empresas</button></li>
                 <li><button class="menu-btn publica-gratis">Publicá gratis</button></li>
                 <li><button class="menu-btn crear-cuenta"><a href="pages/crear-cuenta.html">Crear cuenta</a></button></li>
-                <li><button class="menu-btn ingresar">Ingresar</button></li>
+                <li><button class="menu-btn ingresar"><a href="pages/ingresar.html">Ingresar</a></button></li>
             </ul>
             <button class="hamburger">&#9776;</button>
             <div class="menu-desplegable">
@@ -51,19 +51,11 @@
                         </select>
                     </div>
                     <div class="input-container">
-                        <select id="location-select" class="location-select location-icon">
-                            <option value="">Ubicación</option>
-                            <option value="Buenos Aires">Buenos Aires</option>
-                            <option value="Córdoba">Córdoba</option>
-                            <option value="Rosario">Rosario</option>
-                            <option value="Mendoza">Mendoza</option>
-                            <option value="Santa Fe">Santa Fe</option>
-                            <option value="Mar del Plata">Mar del Plata</option>
-                            <option value="La Plata">La Plata</option>
-                        </select>
-                        <script src="provincias.js"></script>
+                        <input list="location-list" id="location-input" class="location-input location-icon" placeholder="Ingresar ubicación">
+                        <datalist id="location-list"></datalist>
+                        <script src="assets\apis\localidades.js"></script>
                     </div>
-                    <button type="submit" class="button-search">Buscar empleo</button>
+                    <button type="submit" class="button-search">Buscar empleo</button>     
                 </form>
             </div>
         </section>

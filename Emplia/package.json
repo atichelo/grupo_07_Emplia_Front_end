@@ -1,7 +1,12 @@
 {
   "type": "module",
   "dependencies": {
+    "cors": "^2.8.5",
+    "cors-anywhere": "^0.4.4",
     "express": "^4.18.2",
-    "firebase": "^10.5.0"
+    "firebase": "^10.5.0",
+    "jquery": "^3.7.1",
+    "jqueryui": "^1.11.1",
+    "node-fetch": "^3.3.2"
   }
 }
