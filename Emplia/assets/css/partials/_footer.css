@@ -9,10 +9,16 @@ footer {
     justify-content: center;
 }
 
+@media screen and (max-width: 600px) {
+    footer {
+        flex-direction: column;
+    }
+}
+
 .socials {
-    list-style-type: none; /* elimina los bullets de la lista */
+    list-style-type: none; 
     display: flex;
-    justify-content: space-around; /* distribuye los elementos de la lista en el espacio disponible */
+    justify-content: space-around; 
 }
 
 .footer-content {
@@ -27,7 +33,7 @@ footer {
 .socials {
     list-style-type: none;
     padding-left: 0;
-    display: flex; /* Esta propiedad hace que los elementos de la lista se muestren en una línea horizontal */
+    display: flex; 
     justify-content: center;
 }
 
@@ -40,7 +46,7 @@ footer {
 }
 
 .socials li {
-    margin: 10px; /* Ajustar este valor para cambiar el espacio entre los iconos */
+    margin: 5px; 
 }
 
 .socials li a {  
@@ -49,6 +55,6 @@ footer {
 }
 
 .socials li a img {
-    width: 43px; /* Ajustar el valor para cambiar el tamaño de los iconos */
-    filter: invert(1); /* Esta propiedad cambia el color de los iconos a blanco (o cualquier otro color que especifiques) */
+    width: 43px; 
+    filter: invert(1); 
 }

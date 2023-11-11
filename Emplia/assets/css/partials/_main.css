@@ -9,7 +9,6 @@
 input[type="texto"] {
   width: var(--ancho-input-texto);
   padding: var(--padding-general);
-  margin-right: var(--margen-general);
   border: 2px solid var(--color-novenario);
   border-radius: var(--radio-borde-general);
   margin-top: var(--margen-general);
@@ -21,7 +20,6 @@ input[type="password" i] {
   writing-mode: horizontal-tb !important;
   width: var(--ancho-input-texto);
   padding: var(--padding-general);
-  margin-right: var(--margen-general);
   border: 2px solid var(--color-novenario);
   border-radius: var(--radio-borde-general);
   margin-top: var(--margen-general);
@@ -37,7 +35,7 @@ input[type="texto"]:focus, input[type="password" i]:focus {
 button.icono-registro {
   width: auto;
   border: none;
-  margin-bottom: var(--margen-general);
+  margin-top: var(--margen-general);
   padding: 0;
   background-color: transparent;
   color:transparent;
@@ -65,9 +63,13 @@ button.icono-registro img {
   font-family: var(--fuente-principal);
   text-align: center;
   margin-top: var(--margen-general);
-  margin-bottom: 16%;
+  margin-bottom: 15%;
 }
+.confirmarRegistro[type="submit" i] {
+  width: 323.2px;
+  padding: var(--padding-general);
 
+}
 @media screen and (max-width: 600px) {
   .continuarBtn,
   .confirmarRegistro[type="submit" i] {
@@ -154,6 +156,9 @@ margin-left: 45%;
   background-position: 5% center;
   text-align: center;
   justify-content: center;
+  appearance: auto;
+  -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador en Chrome y Safari */
+  -moz-appearance: none; /* Elimina el estilo predeterminado del navegador en Firefox */
 }
 .location-input {
   width: 268.400px;
@@ -163,12 +168,12 @@ margin-left: 45%;
 }
 
 .job-select.job-icon {
-  background-image: url('D:/Documents/grupo_07_Emplia/Emplia/assets/icons/busqueda.ico');
+  background-image: url("D:/Documents/grupo_07_Emplia/Emplia/assets/icons/busqueda.ico");
   display: block;
 }
 
 .location-input.location-icon {
-  background-image: url('D:/Documents/grupo_07_Emplia/Emplia/assets/icons/marcador.ico');
+  background-image: url("D:/Documents/grupo_07_Emplia/Emplia/assets/icons/marcador.ico");
   display: block;
 }
 
@@ -597,7 +602,7 @@ button.cv:hover {
   display: block;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   label {
     font-size: var(--tamano-fuente-h3);
   }
@@ -649,10 +654,11 @@ button.cv:hover {
     border: 2px solid var(--color-terciario);
     color: var(--color-terciario);
   }
+  
 
 a {
   display: block;
-  color: var(--color-principal);
+  color: var(--color-secundario);
   text-align: center;
   text-decoration: none;
 }
@@ -667,7 +673,7 @@ a {
   text-decoration: none;
   margin-top: var(--margen-general);
 }
-@media (max-width: 768px) {
+@media (max-width: 600px) {
   .login-container,
   .cuenta,
   .olvidaste,

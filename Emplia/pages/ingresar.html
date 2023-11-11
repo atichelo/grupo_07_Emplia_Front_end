@@ -25,16 +25,18 @@
                 <button id="google-btn" class="icono-registro"><img src="../assets/icons/googlei.ico" alt="Google Icon"></button>
                 <button id="facebook-btn" class="icono-registro"><img src="../assets/icons/facebooki.ico" alt="Facebook Icon"></button>
                 <button id="linkedin-btn" class="icono-registro"><img src="../assets/icons/linkedini.ico" alt="LinkedIn Icon"></button>
-                <div class="login-container">
-                    <input type="text" placeholder="Ingresar Usuario" name="uname" required>
-                    <br>
-                    <input type="password" placeholder="Ingresar Contraseña" name="psw" required>
-                    <br>
-                    <a href="recu-contra.html" class="olvidaste">¿Olvidaste tu contraseña?</a>
-                    <br>
-                    <button type="submit">Iniciar sesión</button>
-                </div>
-                <a href="crear-cuenta.html" class="cuenta">¿No tienes una cuenta? Regístrate aquí.</a>
+                <form>
+                    <div class="login-container">
+                        <input type="text" placeholder="Ingresar usuario" name="uname" required>
+                        <br>
+                        <input type="password" placeholder="Ingresar contraseña" name="psw" required>
+                        <br>
+                        <a href="recu-contra.html" class="olvidaste">¿Olvidaste tu contraseña?</a>
+                        <br>
+                        <button type="submit">Iniciar sesión</button>
+                    </div>
+                    <a href="crear-cuenta.html" class="cuenta">¿No tienes una cuenta? Regístrate aquí.</a>
+                </form>
             </div>  
         </section>    
     </main>    
@@ -81,6 +83,9 @@
                 </div>
             </div>
         </footer>
-    <script src=".././recupera_psw.js"></script> 
+    
+    <script src="../assets/js/registrof.js"></script>
+    <script src="../assets/js/logueado.js"></script>
+    <!--<script src="../assets/js/recupera_psw.js"></script>-->
     </body>
     </html>

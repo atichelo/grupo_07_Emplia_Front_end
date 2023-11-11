@@ -1,10 +1,9 @@
-from flask import Flask, jsonify, abort
+from flask import Flask, jsonify, abort, send_from_directory
 import requests
 from flask_cors import CORS
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder='D:/Documents/grupo_07_Emplia/Emplia')
 CORS(app)
-
 @app.route('/localidades/<nombre>', methods=['GET'])
 def obtener_localidades_por_nombre(nombre):
     #if not nombre.isalpha():
@@ -18,6 +17,9 @@ def obtener_localidades_por_nombre(nombre):
     response = jsonify(response_data)
     response.headers.add('Access-Control-Allow-Origin', '*')  # Agrega el encabezado CORS
     return response
+@app.route('/<path:path>', methods=['GET'])
+def static_file(path):
+    return send_from_directory(app.static_folder, path)
 
 if __name__ == '__main__':
     app.run(port=5000)

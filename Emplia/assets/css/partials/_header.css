@@ -39,7 +39,7 @@ header {
 }
 
 .menu-btn a {
-  text-decoration: none; /* Quita el subrayado */
+  text-decoration: none; /* Saca el subrayado */
   color: inherit; /* Hereda el color del texto del elemento padre */
 }
 
@@ -175,5 +175,45 @@ header {
   .hamburger,
   .menuh {
     display: none;
+  }
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 150px;
+  z-index: 1;
+  background-color: var(--color-terciario);
+  border-radius: var(--radio-borde-general);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+  padding-top: var( --padding-general);
+  padding-bottom: var(--padding-general);
+  font-size: var(--tamano-fuente-p)!important;
+  text-decoration: none;
+  font-family: var(--fuente-principal);
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn {
+  background-color: var(--color-terciario);
+  color: var(--color-secundario);
+  border: 2px solid var(--color-secundario);
+  border-radius: var(--radio-borde-general);
+  font-family: var(--fuente-principal);
+  font-weight: bold;
+  font-size: var(--tamano-fuente-p);
+  width: 150px; /* Ajustar el ancho */
+  margin-right: var(--margen-general); /* Ajustar el margen */
+  margin-top: 5px;
+}
+.dropbtn:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+}
+
+@media screen and (max-width: 600px) {
+  .dropdown-content {
+      position: static;
   }
 }
