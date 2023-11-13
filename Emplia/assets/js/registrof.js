@@ -2,9 +2,13 @@ document.querySelector("form").addEventListener('submit', function(event) {
     // Previene la recarga de la página
     event.preventDefault();
 
-    // Captura los valores ingresados
-    var usuario = document.querySelector('input[name="uname"]').value;
-    var contrasena = document.querySelector('input[name="psw"]').value;
+    // Intenta seleccionar los elementos por ambos nombres
+    var usuarioElem = document.querySelector('input[name="uname"]');
+    var contrasenaElem = document.querySelector('input[name="psw"]');
+
+    // Si los elementos existen, obtén sus valores
+    var usuario = usuarioElem ? usuarioElem.value : null;
+    var contrasena = contrasenaElem ? contrasenaElem.value : null;
 
     // Imprime los valores en la consola
     console.log('Usuario: ' + usuario);

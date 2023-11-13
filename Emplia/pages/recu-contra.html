@@ -22,15 +22,19 @@
         <section class="recuperar-psw">
             <div class="recuperar-form">
                 <h2>Recuperar contraseña</h2>
-                <div class="recuperar-container">
-                    <input type="email" class= "mls" placeholder="Ingresar Email" name="email" autocomplete="email" required>
-                </div>
-                <div class="recupera">
-                    <button type="submit">Recuperar contraseña</button>
-                </div>
+                <form id="recuperarForm" action="https://formspree.io/f/mnqkyqlb" method="POST">
+                    <div class="recuperar-container"> 
+                        <input type="email" class="mls" placeholder="Ingresar Email" name="email" autocomplete="email" required>
+                        <input type="hidden" name="_subject" value="Recuperación de contraseña">
+                        <input type="hidden" name="message" value="Para recuperar tu contraseña sigue el siguiente link: pages\nvo-psw.html">
+                    </div>
+                    <div class="recupera">
+                        <button type="submit">Recuperar contraseña</button>
+                    </div>
+                </form>
             </div>  
-        </section>    
-    </main>
+        </section>        
+    </main>    
 <footer id="footer">
     <div class="footer-body">
         <div class="container-f">
@@ -74,7 +78,5 @@
         </div>
     </div>
 </footer>
-<script src=".././assets/js/step_cv.js"></script>
-<script src=".././assets/js/datos_cv.js"></script>
 </body>
 </html>
