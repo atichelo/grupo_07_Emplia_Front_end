@@ -37,7 +37,7 @@ function guardarDatos(event) {
     referencias: document.getElementById("referencias").value,
   };
   if (!datos) {
-      // La variable `datos` es nula, por lo que no podemos hacer nada.
+      
     return;
   }
 
@@ -74,7 +74,7 @@ function guardarDatos(event) {
     datos["inicio" + (j + 1)] = document.getElementById("inicio" + (j + 1)).value;
     datos["fin" + (j + 1)] = document.getElementById("fin" + (j + 1)).value;
   }
-  // Muestra el objeto datos en la consola (opcional)
+ 
   console.log(datos);
 }
 
