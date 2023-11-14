@@ -2,9 +2,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
     document.querySelector('form').addEventListener('submit', function(event) {
         event.preventDefault();
         
-        var nombre_usuario = document.querySelector('input[name="nombre_usuario"]').value;
-        var contrasena = document.querySelector('input[name="contrasena"]').value;
-        var confirmar_contrasena = document.querySelector('input[name="confirmar_contrasena"]').value;
+        var nombre_usuario = document.querySelector(
+          'input[name="nombre_usuario"]'
+        ).value;
+        var contrasena = document.querySelector(
+          'input[name="contrasena"]'
+        ).value;
+        var confirmar_contrasena = document.querySelector(
+          'input[name="confirmar_contrasena"]'
+        ).value;
         var nombre = document.querySelector('input[name="nombre"]').value;
         var apellido = document.querySelector('input[name="apellido"]').value;
         var correo = document.querySelector('input[name="correo"]').value;

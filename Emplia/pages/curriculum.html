@@ -21,8 +21,7 @@
         <main>
             <section class="section-c">
                 <h1 class="display-4">Currículum Vitae</h1>
-                <form onsubmit="guardarDatos(event)">
-                    <!-- Información de Contacto -->
+                <form onsubmit="guardarDatos(event)"> 
                     <div id="step1" class="step-form active">
                         <h2>Información de Contacto:</h2>
                         <div class="mb-3">
@@ -55,8 +54,8 @@
                             <!-- Experiencia laboral 1 -->
                             <div class="mb-3 grid-container">
                                 <div class="empuesto">
-                                    <label for="empresa1" class="form-label">Nombre de la empresa:</label>
-                                    <input type="text" id="empresa1" name="empresa1" class="form-control"
+                                    <label for="empresa" class="form-label">Nombre de la empresa:</label>
+                                    <input type="text" id="empresa" name="empresa" class="form-control"
                                         placeholder="Ingrese el nombre de la empresa">
                                     <label for="puesto" class="form-label">Puesto:</label>
                                     <input type="text" id="puesto" name="puesto" class="form-control"
@@ -186,7 +185,8 @@
             </div>
         </div>
     </footer>
-<script src=".././assets/js/step_cv.js"></script>
+<script src=".././assets/js/cvprecarga.js"></script>
 <script src=".././assets/js/datos_cv.js"></script>
+<script src=".././assets/js/step_cv.js"></script>
 </body>
 </html>

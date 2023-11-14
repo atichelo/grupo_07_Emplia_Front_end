@@ -16,9 +16,14 @@ function guardarDatos(event) {
     logros: document.getElementById("logros").value,
     referencias: document.getElementById("referencias").value,
   };
+  if (!datos) {
+      // La variable `datos` es nula, por lo que no podemos hacer nada.
+    return;
+  }
+
   var experienciaCount = experienciaContainer.childElementCount;
   for (var i = 0; i < experienciaCount; i++) {
-    datos["empresa1" + (i + 1)] = document.getElementById("empresa1" + (i + 1)).value;
+    datos["empresa" + (i + 1)] = document.getElementById("empresa" + (i + 1)).value;
     datos["puesto" + (i + 1)] = document.getElementById("puesto" + (i + 1)).value;
     datos["fecha_inicio" + (i + 1)] = document.getElementById("fecha_inicio" + (i + 1)).value;
     datos["fecha_fin" + (i + 1)] = document.getElementById("fecha_fin" + (i + 1)).value;

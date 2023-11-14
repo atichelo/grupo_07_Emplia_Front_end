@@ -4,11 +4,11 @@ var fs = require('fs');
 var path = require('path');
 
 // Define 'port' y 'host'
-var port = 8081;  // Puedes cambiar esto por el puerto que prefieras
-var host = 'localhost';  // Puedes cambiar esto por el host que prefieras
+var port = 8081; 
+var host = 'localhost'; 
 
 cors_proxy.createServer({
-    originWhitelist: [], // Permite todos los orígenes
+    originWhitelist: [], 
     requireHeader: ['origin', 'x-requested-with'],
     removeHeaders: ['cookie', 'cookie2']
 }).listen(port, host, function() {

@@ -68,11 +68,15 @@ button.icono-registro img {
 .confirmarRegistro[type="submit" i] {
   padding: var(--padding-general);
 }
+
 .formulario {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.continuarBtn {
+  margin-top: 1%;
 }
 .continuarBtn1 {
   margin-bottom: 15%;
@@ -84,19 +88,12 @@ button.icono-registro img {
   color: var(--color-terciario);
   text-align: center;
 }
-.continuarH1 h1 {
-  font-size: var(--tamano-fuente-h1);
-  color: var(--color-principal);
-  text-align: center;
-  margin-bottom: 20px;
-  padding: var(--padding-general);
-  border-radius: var(--radio-borde-general);
-  background-repeat: no-repeat;
-  background-size: cover; 
-  text-align: center;
-  margin-left: 10%;
- }
-  
+.continuarH1 {
+  display: flex; 
+  justify-content: center; 
+  gap: 20px;
+}
+
 @media screen and (max-width: 600px) {
   .continuarBtn,
   .continuarBtn1,
