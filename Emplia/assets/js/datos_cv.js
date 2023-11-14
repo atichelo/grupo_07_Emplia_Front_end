@@ -1,5 +1,20 @@
 var experienciaContainer;
 var educacionContainer;
+document.addEventListener('DOMContentLoaded', function() {
+  // Comprueba si hay datos guardados en localStorage
+  if(localStorage.getItem('registroUsuario')) {
+      // Recupera los datos del almacenamiento local
+      var data = JSON.parse(localStorage.getItem('registroUsuario'));
+
+      // Asigna los datos a los campos correspondientes
+      document.getElementById('nombre').value = data.nombre;
+      document.getElementById('apellido').value = data.apellido;
+      document.getElementById('correo').value = data.correo;
+      document.getElementById('telefono').value = data.telefono;
+      document.getElementById('direccion').value = data.domicilio;
+  }
+});
+
 function guardarDatos(event) {
   experienciaContainer = document.getElementById("experiencia-container");
   educacionContainer = document.getElementById("educacion-container");
@@ -10,6 +25,11 @@ function guardarDatos(event) {
     correo: document.getElementById("correo").value,
     telefono: document.getElementById("telefono").value,
     direccion: document.getElementById("direccion").value,
+    empresa: document.getElementById("empresa").value,
+    puesto: document.getElementById("puesto").value,
+    fecha_inicio: document.getElementById("fecha_inicio").value,
+    fecha_fin: document.getElementById("fecha_fin").value,
+    descripcion: document.getElementById("descripcion").value,
     resumen: document.getElementById("resumen").value,
     habilidades: document.getElementById("habilidades").value,
     idiomas: document.getElementById("idiomas").value,
@@ -23,11 +43,29 @@ function guardarDatos(event) {
 
   var experienciaCount = experienciaContainer.childElementCount;
   for (var i = 0; i < experienciaCount; i++) {
-    datos["empresa" + (i + 1)] = document.getElementById("empresa" + (i + 1)).value;
-    datos["puesto" + (i + 1)] = document.getElementById("puesto" + (i + 1)).value;
-    datos["fecha_inicio" + (i + 1)] = document.getElementById("fecha_inicio" + (i + 1)).value;
-    datos["fecha_fin" + (i + 1)] = document.getElementById("fecha_fin" + (i + 1)).value;
-    datos["descripcion" + (i + 1)] = document.getElementById("descripcion" + (i + 1)).value;
+      var empresaElement = document.getElementById("empresa" + (i + 1));
+      if (empresaElement) {
+          datos["empresa" + (i + 1)] = empresaElement.value;
+      }
+      var puestoElement = document.getElementById("puesto" + (i + 1));
+      if (puestoElement) {
+          datos["puesto" + (i + 1)] = puestoElement.value;
+      }
+      
+      var fechaInicioElement = document.getElementById("fecha_inicio" + (i + 1));
+      if (fechaInicioElement) {
+          datos["fecha_inicio" + (i + 1)] = fechaInicioElement.value;
+      }
+      
+      var fechaFinElement = document.getElementById("fecha_fin" + (i + 1));
+      if (fechaFinElement) {
+          datos["fecha_fin" + (i + 1)] = fechaFinElement.value;
+      }
+      
+      var descripcionElement = document.getElementById("descripcion" + (i + 1));
+      if (descripcionElement) {
+          datos["descripcion" + (i + 1)] = descripcionElement.value;
+      }
   }
   var educacionCount = educacionContainer.childElementCount;
   for (var j = 0; j < educacionCount; j++) {

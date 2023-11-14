@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', function() {
     // Recupera los datos del almacenamiento local
     var data = JSON.parse(localStorage.getItem('registroUsuario'));
 

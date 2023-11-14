@@ -36,13 +36,13 @@
                             <label for="direccion">Dirección de residencia:</label>
                             <input type="text" id="direccion" required class="form-control" placeholder="Dirección de residencia">
                         </div>
-                        <button class="cv" id="next1">Siguiente paso</button>
+                        <button class="cv" id="next1" onclick="nextStep(2)">Siguiente paso</button>
                     </div>
                     <!-- Perfil profesional -->
                     <div id="step2" class="step-form">
                         <h2>Perfil profesional (opcional):</h2>
                         <div class="mb-3">
-                            <label for="resumen" class="form-label">Resumen:</label>
+                            <label for="resumen" class="form-label"></label>
                             <textarea id="resumen" name="resumen" rows="4" class="form-control"></textarea>
                         </div>
                         <button class="cv" onclick="previousStep(1)">Anterior</button>
@@ -68,8 +68,7 @@
                                     <input type="date" id="fecha_fin" name="fecha_fin" class="form-control">
                                 </div>
                                 <label class="form-label">Descripción del trabajo:</label>
-                                <textarea name="descripcion" rows="4" class="form-control"
-                                    placeholder="Describa sus responsabilidades y logros"></textarea>
+                                <textarea id="descripcion" name="descripcion" rows="4" class="form-control" placeholder="Describa sus responsabilidades y logros"></textarea>
                             </div>
                         </div>
                         <button class="cv" onclick="addExperience()">Agregar Experiencia</button>
@@ -94,7 +93,7 @@
                         <button class="cv" onclick="previousStep(3)">Anterior</button>
                         <button class="cv" onclick="nextStep(5)">Siguiente paso</button>
                     </div>
-                    <<div id="step5" class="step-form">
+                    <div id="step5" class="step-form">
                         <h2>Habilidades:</h2>
                         <div class="mb-3">
                             <label for="habilidades" class="form-label">Lista de habilidades relevantes:</label>
