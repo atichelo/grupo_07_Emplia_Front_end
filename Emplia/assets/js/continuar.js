@@ -9,3 +9,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
         window.location.href = '../pages/ingresar.html';
     });
 });
+//comento para que guarde los cambios, tengo un prblema con el repo

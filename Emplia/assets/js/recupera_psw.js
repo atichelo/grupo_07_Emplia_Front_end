@@ -25,3 +25,4 @@ $('#recuperarForm').on('submit', function(e) {
             }
         });
 });
+//comento para que guarde los cambios, tengo un prblema con el repo

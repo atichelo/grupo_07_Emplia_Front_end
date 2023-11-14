@@ -28,3 +28,4 @@ firebase.auth().signInWithPopup(provider).then(function(result) {
     var errorMessage = error.message;
     console.log(errorCode, errorMessage);
 });
+//comento para que guarde los cambios, tengo un prblema con el repo

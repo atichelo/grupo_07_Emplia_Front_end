@@ -21,3 +21,4 @@ document.querySelector("form").addEventListener('submit', function(event) {
     // Redirige a la página principal
     window.location.href = "../index.html";
 });
+//comento para que guarde los cambios, tengo un prblema con el repo

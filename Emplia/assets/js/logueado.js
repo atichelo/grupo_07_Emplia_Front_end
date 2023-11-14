@@ -51,3 +51,4 @@ function logout() {
     localStorage.removeItem('usuario');
     location.reload();
 }
+//comento para que guarde los cambios, tengo un prblema con el repo

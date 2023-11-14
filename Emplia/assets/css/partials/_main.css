@@ -143,7 +143,7 @@ button.icono-registro img {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  color: var(--color-quinario); /* Cambiar el color a gris */
+  color: var(--color-quinario); 
 }
 
 .job-select,
@@ -213,7 +213,7 @@ button[type="submit"]:hover {
 section {
   background-color: #f8f8f8; /* Cambia el color de fondo según tus preferencias */
   padding: 0px; /* Espaciado interior */
-  text-align: center; /* Centrar los logotipos horizontalmente */
+  text-align: center; /* Centrar los logo horizontalmente */
 }
 
 .logos {
