@@ -8,4 +8,3 @@ hamburger.addEventListener('click', function() {
         menuDesplegable.style.display = 'none';
     }
 });
-//comento para que guarde los cambios, tengo un prblema con el repo

@@ -453,7 +453,7 @@ table.empleos {
 
 .btn-destacado {
   width: var(--ancho-input-texto);
-  background-color: var(--color-terciario); /* Cambia el color de fondo según tus preferencias */
+  background-color: var(--color-terciario);
   color: var(--color-principal);
   border-radius: var(--radio-borde-general);
   cursor: pointer; /* Cambia el cursor al pasar por encima del botón */

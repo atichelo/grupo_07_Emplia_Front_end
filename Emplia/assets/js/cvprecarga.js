@@ -8,4 +8,3 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('telefono').value = data.telefono;
     document.getElementById('direccion').value = data.domicilio;
 });
-//comento para que guarde los cambios, tengo un prblema con el repo

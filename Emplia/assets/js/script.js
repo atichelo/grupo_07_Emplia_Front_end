@@ -45,4 +45,3 @@ searchBtn.addEventListener('click', (event) => {
   job5Item.textContent = `${job5.title} - ${job5.company} (${job5.location})`;
   jobResultsElement.appendChild(job5Item);
 });
-//comento para que guarde los cambios, tengo un prblema con el repo

@@ -29,4 +29,3 @@ function obtenerLocalidades(nombre) {
             console.log('Hubo un problema con la petición Fetch:' + e.message);
         });
 }
-//comento para que guarde los cambios, tengo un prblema con el repo
