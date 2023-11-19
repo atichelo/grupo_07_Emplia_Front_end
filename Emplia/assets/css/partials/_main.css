@@ -209,11 +209,11 @@ button[type="submit"]:hover {
   color: var(--color-terciario);
 }
 
-/* Estilos para la sección de logotipos */
+/* Estilos para la sección de logo */
 section {
-  background-color: #f8f8f8; /* Cambia el color de fondo según tus preferencias */
-  padding: 0px; /* Espaciado interior */
-  text-align: center; /* Centrar los logo horizontalmente */
+  background-color: #f8f8f8; 
+  padding: 0px; 
+  text-align: center; 
 }
 
 .logos {
@@ -525,7 +525,6 @@ table.empleos {
   color: var(--color-octonario);
 }
 
-
 .section-c {
   background-color: var(--color-quinario);
   padding: var(--padding-general);
@@ -536,18 +535,11 @@ table.empleos {
   font-size: var(--tamano-fuente-h1-banner);
 }
 
-.grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  justify-items: center;
-}
-
 .mb-3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--margen-general);
+  margin-bottom: var(--margen-general);
 }
 
 .form-control {
@@ -555,13 +547,25 @@ table.empleos {
   padding: var(--padding-general);
   margin-bottom: var(--margen-general);
   border-radius: var(--radio-borde-general);
-  border: 2px solid var(--color-secundario);
-  background-color: var(--color-quinario);
-  border-color: var(--color-secundario);
+  border: 2px solid var(--color-novenario);
+  color: var(--color-octonario);
+  font-family: var(--fuente-principal);
+  margin-left: var(--margen-general);
   margin-top: var(--margen-general);
+  height: 49.20px
 }
-
-.form-control select:focus {
+#resumen,
+#descripcion,
+#habilidades,
+#certificaciones,
+#cursos,
+#idiomas,
+#logros,
+#referencias {
+  width: 39%;
+  height: 20%;
+}
+.form-control:focus {
   outline: none;
   border-color: var(--color-secundario);
   box-shadow: 0px 0px 5px rgba(4, 137, 152, 0.5);
@@ -569,10 +573,36 @@ table.empleos {
 
 .form-label {
   font-weight: bold;
-  margin-bottom: var(--margen-general);
-  display: inline-block;
+  background-color: var(--color-quinario);
+  text-align:center;
 }
 
+.grid-container {
+  display: grid;
+  justify-content: center;
+  }
+  .grid-containere {
+    display: grid;
+    margin-left: 25%;
+    }
+#descripcion { 
+  width: 98%;
+  height: 100%;
+  grid-area: 3 / 3 / 4 / 1;
+    
+   }
+.grid-input {
+  align-items: center;
+   margin-left: 20%;
+}
+.titulo,
+.insti,
+.fini,
+.ffin {
+  text-align: center;
+  margin-left: 20%;
+  width: var(--ancho-input-texto);
+}
 button.cv {
   text-decoration: none;
   font-weight: bold;
@@ -586,6 +616,7 @@ button.cv {
   color: var(--color-terciario);
   margin-left: 0;
   height: 5%;
+  width: var(--ancho-button-cv);
   margin-top: var(--margen-general);
   margin-bottom: var(--margen-general);
 }
@@ -662,7 +693,6 @@ button.cv:hover {
     color: var(--color-terciario);
   }
   
-
 a {
   display: block;
   color: var(--color-secundario);

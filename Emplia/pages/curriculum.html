@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Curriculum Vitae - EsteJobs</title>
-
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../assets/css/styles.css">
 </head>
 <body>
@@ -40,7 +40,7 @@
                     </div>
                     <!-- Perfil profesional -->
                     <div id="step2" class="step-form">
-                        <h2>Perfil profesional (opcional):</h2>
+                        <h2>Perfil profesional:</h2>
                         <div class="mb-3">
                             <label for="resumen" class="form-label"></label>
                             <textarea id="resumen" name="resumen" rows="4" class="form-control"></textarea>
@@ -62,9 +62,9 @@
                                         placeholder="Ingrese su puesto en la empresa">
                                 </div>
                                 <div class="fechas-container">
-                                    <label for="fecha_inicio" class="form-label">Fecha de inicio:</label>
+                                    <label for="fecha_inicio" class="form-label ini">Fecha de inicio:</label>
                                     <input type="date" id="fecha_inicio" name="fecha_inicio" class="form-control">
-                                    <label for="fecha_fin" class="form-label">Fecha de fin:</label>
+                                    <label for="fecha_fin" class="form-label fin">Fecha de fin:</label>
                                     <input type="date" id="fecha_fin" name="fecha_fin" class="form-control">
                                 </div>
                                 <label class="form-label">Descripción del trabajo:</label>
@@ -78,16 +78,18 @@
                     <div id="step4" class="step-form">
                         <h2>Educación</h2>
                         <div id="educacion-container"></div>
-                        <div class="mb-3 grid-container">
-                            <label for="titulo" class="form-label">Título obtenido:</label>
-                            <input type="text" id="titulo" name="titulo" class="form-control"
-                                placeholder="Ej. Diploma de Educación">
-                            <label for="institucion" class="form-label">Institución:</label>
-                            <input type="text" id="institucion" name="institucion" class="form-control">
-                            <label for="inicio" class="form-label">Fecha de inicio:</label>
-                            <input type="date" id="inicio" name="inicio" class="form-control">
-                            <label for="fin" class="form-label">Fecha de finalización (si corresponde):</label>
-                            <input type="date" id="fin" name="fin" class="form-control">
+                        <div class="mb-3 grid-containere">
+                            <label for="titulo" class="form-label titulo">Título obtenido:</label>
+                            <input type="text" id="titulo" name="titulo" class="form-control grid-input" placeholder="Ej.:Técnico en electrónica">
+
+                            <label for="institucion" class="form-label insti">Institución:</label>
+                            <input type="text" id="institucion" name="institucion" class="form-control grid-input" placeholder="Ingrese el nombre de la institución">
+
+                            <label for="inicio" class="form-label fini">Fecha de inicio:</label>
+                            <input type="date" id="inicio" name="inicio" class="form-control grid-input">
+
+                            <label for="fin" class="form-label ffin">Fecha de finalización (si corresponde):</label>
+                            <input type="date" id="fin" name="fin" class="form-control grid-input">
                         </div>
                         <button class="cv" onclick="addEducation()">Agregar estudios</button>
                         <button class="cv" onclick="previousStep(3)">Anterior</button>
@@ -96,7 +98,6 @@
                     <div id="step5" class="step-form">
                         <h2>Habilidades:</h2>
                         <div class="mb-3">
-                            <label for="habilidades" class="form-label">Lista de habilidades relevantes:</label>
                             <textarea id="habilidades" name="habilidades" rows="4" class="form-control"></textarea>
                         </div>
                         <button class="cv" onclick="previousStep(4)">Anterior</button>
@@ -105,16 +106,16 @@
                         <div id="step6" class="step-form">
                             <h2>Certificaciones y Cursos Adicionales:</h2>
                             <div class="mb-3">
-                                <label for="certificaciones" class="form-label">Certificaciones profesionales:</label>
+                                <h6>Certificaciones profesionales:</h6>
                                 <textarea id="certificaciones" name="certificaciones" rows="4" class="form-control"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="cursos" class="form-label">Cursos adicionales o de formación:</label>
+                                <h6>Cursos Adicionales o de formación:</h6>
                                 <textarea id="cursos" name="cursos" rows="4" class="form-control"></textarea>
                             </div>
                             <h2>Idiomas:</h2>
                             <div class="mb-3">
-                                <label for="idiomas" class="form-label">Lista de idiomas y nivel de competencia:</label>
+                                <h6>Idiomas y nivel de competencia:</h6>
                                 <textarea id="idiomas" name="idiomas" rows="4" class="form-control"></textarea>
                             </div>
                             <button class="cv" onclick="previousStep(5)">Anterior</button>
@@ -123,20 +124,19 @@
                         <div id="step7" class="step-form">
                             <h2>Logros y Premios (opcional):</h2>
                             <div class="mb-3">
-                                <label for="logros" class="form-label">Logros y premios:</label>
                                 <textarea id="logros" name="logros" rows="4" class="form-control"></textarea>
                             </div>
                             <h2>Referencias:</h2>
                             <div class="mb-3">
-                                <label for="referencias" class="form-label">Nombres y datos de contacto de referencias:</label>
+                                <h6>Nombres y datos de contacto de referencias:</h6>
                                 <textarea id="referencias" name="referencias" rows="4" class="form-control"></textarea>
                             </div>
                             <div class="mb-3">
-                                <label for="cv" class="form-label">Currículum Vitae (Adjuntar archivo PDF):</label>
+                                <h6>Currículum Vitae (Adjuntar archivo PDF):</h6>
                                 <input type="file" class="form-control" id="cv" name="cv">
                             </div>
                             <button class="cv" onclick="previousStep(6)">Anterior</button>
-                            <button type="submit" class="btn btn-primary">Enviar Currículum</button>
+                            <button type="submit" class="cv"> Guardar currículum</button>
                         </div>
                 </form>
             </section>
@@ -187,5 +187,7 @@
 <script src=".././assets/js/cvprecarga.js"></script>
 <script src=".././assets/js/datos_cv.js"></script>
 <script src=".././assets/js/step_cv.js"></script>
+<script src=".././assets//js/logueado.js"></script>
+<script src=".././assets/js/enviarcv.js"></script>
 </body>
 </html>
