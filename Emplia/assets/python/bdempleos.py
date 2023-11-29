@@ -17,10 +17,10 @@ def empleos():
 
     cursor = cnx.cursor()
     cursor.execute("SELECT * FROM Empleos")
-    empleos = [empleo[2] for empleo in cursor.fetchall()]
+    empleos = [empleo[3] for empleo in cursor.fetchall()]
     cnx.close()
 
     return jsonify(empleos)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=4000, debug=True)

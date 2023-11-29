@@ -34,4 +34,4 @@ def recuperar():
 
     return jsonify({'status': 'success', 'message': 'Correo enviado'}), 200
 if __name__ == '__main__':
-    app.run(port=5000)
+    app.run(port=4000, debug=True)

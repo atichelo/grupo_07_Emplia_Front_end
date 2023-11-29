@@ -15,13 +15,14 @@ $('#recuperarForm').on('submit', function(e) {
         })
     };
 
-    fetch('http://127.0.0.1:5000/recuperar', options)
-        .then(response => response.json())
-        .then(data => {
-            if (data.message === 'Correo enviado') {
-                alert('Se ha enviado un correo electrónico de recuperación de contraseña a ' + email);
-            } else {
-                alert('Hubo un error al enviar el correo electrónico de recuperación de contraseña.');
-            }            
-        });
+    fetch('http://127.0.0.1:4000/recuperar', options)
+    .then(response => response.json())
+    .then(data => {
+        // código para procesar los datos
+    })
+    .catch(error => {
+        // código para manejar el error
+        console.error(error);
+    });
+
 });

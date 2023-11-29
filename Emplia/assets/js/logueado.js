@@ -1,7 +1,6 @@
 function logueado() {
     var usuario = localStorage.getItem('usuario');
-    var logueado = localStorage.getItem('logueado'); 
-    if (usuario && logueado === 'true') {
+    if (usuario) {
         var userMenu = document.getElementById('userMenu');
         if (userMenu) {
             var botonIngresar = document.querySelector('.ingresar');
@@ -50,6 +49,5 @@ window.onload = function() {
 
 function logout() {
     localStorage.removeItem('usuario');
-    localStorage.removeItem('logueado');
     location.reload();
 }

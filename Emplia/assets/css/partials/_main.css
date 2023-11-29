@@ -163,17 +163,15 @@ button.icono-registro img {
   background-position: 5% center;
   text-align: center;
   justify-content: center;
-  appearance: auto;
-  -webkit-appearance: none; /* Elimina el estilo predeterminado del navegador en Chrome y Safari */
-  -moz-appearance: none; /* Elimina el estilo predeterminado del navegador en Firefox */
+  appearance: none; /* Elimina el estilo predeterminado del navegador */
 }
+
 .location-input {
   width: 268.400px;
   height: 38.400px;
   padding: 0px;
   color: var(--color-octonario)
 }
-
 .job-select.job-icon {
   background-image: url("D:/Documents/grupo_07_Emplia/Emplia/assets/icons/busqueda.ico");
   display: block;
@@ -209,6 +207,51 @@ button[type="submit"]:hover {
   color: var(--color-terciario);
 }
 
+@media screen and (max-width: 600px) {
+  .banner {
+    height: 20vh; /* Reduce la altura del banner */
+  }
+
+  #myVideo {
+    height: 100%; /* Ajusta la altura del video al banner */
+  }
+
+  .form-wrapper {
+    bottom: -10%; /* Modifica la posición del formulario */
+    width: 100%; /* Reduce el ancho del formulario */
+    height: 80px; /* Reduce la altura del formulario */
+  }
+
+  .job-search-form {
+    flex-direction: row; /* Cambia la dirección del contenedor a columna */
+    align-items: stretch; /* Estira los elementos a lo ancho del contenedor */
+    width: 100%;
+  }
+
+  .job-select {
+    width: 120%;
+    margin-right: 100px; /* Elimina el margen derecho */
+    flex-direction: row;
+    height: 56px;
+  }
+  .location-input {
+    width: 80%;
+    margin-left: 28px; /* Elimina el margen derecho */
+    flex-direction: row;
+    height: 55.5px;
+  }
+  button[type="submit"] {
+    margin-left: 10px;
+    width: 40%;
+  }
+  .job-select.job-icon {
+    background-image:none
+  }
+  .location-input.location-icon {
+    background-image: none;
+  }
+  
+}
 /* Estilos para la sección de logo */
 section {
   background-color: #f8f8f8; 
@@ -241,6 +284,24 @@ section {
   border-radius: var(--radio-borde-general);
 }
 
+/* Estilos para pantallas pequeñas (menores a 768px) */
+@media screen and (max-width: 600px) {
+  .logos {
+    max-height: none; /* Elimina la restricción de altura */
+    flex-direction: row; /* Cambia la dirección a columna */
+  }
+
+  .logos img {
+    height: var(--tamano-logose) / 4; /* Reduce la altura de las imágenes */
+    margin-right: 0; /* Elimina el margen derecho */
+    
+  }
+  section {
+    background-color: #f8f8f8; 
+    padding: 0px; 
+    text-align: center; 
+  }
+}
 .search-section input[type="text"] {
   margin-top: calc(var(--margen-general) + 20px);
 }
