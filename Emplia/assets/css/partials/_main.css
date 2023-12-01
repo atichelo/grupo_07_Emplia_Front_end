@@ -173,12 +173,12 @@ button.icono-registro img {
   color: var(--color-octonario)
 }
 .job-select.job-icon {
-  background-image: url("D:/Documents/grupo_07_Emplia/Emplia/assets/icons/busqueda.ico");
+  background-image: url("D:/Documents/grupo_07_Emplia_frontend/Emplia/assets/icons/busqueda.ico");
   display: block;
 }
 
 .location-input.location-icon {
-  background-image: url("D:/Documents/grupo_07_Emplia/Emplia/assets/icons/marcador.ico");
+  background-image: url("D:/Documents/grupo_07_Emplia_frontend/Emplia/assets/icons/marcador.ico");
   display: block;
 }
 
@@ -376,7 +376,7 @@ section {
   margin-bottom: 20px;
   padding: var(--padding-general);
   border-radius: var(--radio-borde-general);
-  background-image: url("D:/Documents/grupo_07_Emplia/Emplia/assets/images/fondo-titulo.jpg");
+  background-image: url("D:/Documents/grupo_07_Emplia_frontend/Emplia/assets/images/fondo-titulo.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   grid-column: 1 / -1; /* Ocupa todas las columnas disponibles */

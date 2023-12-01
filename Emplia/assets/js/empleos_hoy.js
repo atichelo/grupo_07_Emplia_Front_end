@@ -1,4 +1,4 @@
-fetch('http://localhost:3000/api/datos')
+fetch('http://localhost:5000/empleoshoy')
     .then(response => response.json())
     .then(data => {
         const selectArea = document.getElementById('area');
