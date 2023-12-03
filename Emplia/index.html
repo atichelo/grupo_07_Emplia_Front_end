@@ -17,7 +17,7 @@
         <nav>
             <ul class="menu">
                 <li><button class="menu-btn cuenta-empresas">Cuenta empresas</button></li>
-                <li><button class="menu-btn publica-gratis">Publicá gratis</button></li>
+                <li><button class="menu-btn publica-gratis"><a href="pages/publicar-empleo.html">Publicar empleos</a></button></li>
                 <li><button class="menu-btn crear-cuenta"><a href="pages/crear-cuenta.html">Crear cuenta</a></button></li>
                 <li><button id="userMenu" class="menu-btn ingresar"><a href="pages/ingresar.html">Ingresar</a></button></li>
             </ul>
@@ -25,7 +25,7 @@
             <div class="menu-desplegable">
                 <ul class="menuh">
                     <li><a href="#cuenta-empresas">Cuenta empresas</a></li>
-                    <li><a href="#publica-gratis">Publicá gratis</a></li>
+                    <li><a href="pages/publicar-empleo.html">Publicar empleos</a></li>
                     <li><a href="pages/crear-cuenta.html">Crear cuenta</a></li>
                     <li><a href="pages/ingresar.html">Ingresar</a></li>
                 </ul>
@@ -42,13 +42,6 @@
                     <div class="input-container">
                         <select id="job-select" class="job-select job-icon">
                             <option value=""> Puesto </option>
-                            <!--<option value="Analista de datos">Analista de datos</option>
-                            <option value="Desarrollador web">Desarrollador web</option>
-                            <option value="Diseñador gráfico">Diseñador gráfico</option>
-                            <option value="Gerente de marketing">Gerente de marketing</option>
-                            <option value="Ingeniero de software">Ingeniero de software</option>
-                            <option value="Recursos humanos">Recursos humanos</option>
-                            <option value="Ventas">Ventas</option>-->
                         </select>
                     </div>
                     <div class="input-container">
@@ -82,47 +75,21 @@
                             <label for="area" class="area">Área</label>
                             <select id="area" v-model="filtro.area" class="area">
                                 <option value="">Todas las áreas</option>
-                                <!--<option value="administracion-contabilidad-y-finanzas">Administración, Contabilidad y
-                                    Finanzas
-                                </option>
-                                <option value="comercial-ventas-y-negocios">Comercial, Ventas y Negocios</option>
-                                <option value="produccion-y-manufactura">Producción y Manufactura</option>
-                                <option value="oficios-y-otros">Oficios y Otros</option>
-                                <option value="abastecimiento-y-logistica">Abastecimiento y Logística</option>
-                                <option value="salud-medicina-y-farmacia">Salud, Medicina y Farmacia</option>
-                                <option value="gastronomia-y-turismo">Gastronomía y Turismo</option>
-                                <option value="recursos-humanos-y-capacitacion">Recursos Humanos y Capacitación</option>
-                                <option value="atencion-al-cliente-call-center-y-telemarketing">Atención al Cliente, Call
-                                    Center y
-                                    Telemarketing</option>
-                                <option value="ingenierias">Ingenierías</option>-->
                             </select>
                         </div>
                         <div class="filter-group">
                             <label for="modalidad-de-trabajo" class="modalidad">Modalidad</label>
                             <select id="modalidad-de-trabajo" v-model="filtro.modalidad" class="modalidad">
                                 <option value="">Todas las modalidades</option>
-                                <!--<option value="presencial">Presencial</option>
-                                <option value="hibrido">Híbrido</option>
-                                <option value="remoto">Remoto</option>
-                                <option value="desde-cualquier-lugar-del-mundo">Desde cualquier lugar del mundo</option>-->
                             </select>
                         </div>
                         <div class="filter-group">
                             <label for="fecha-de-publicacion" class="fecha-de-publicacion">Fecha de publicación</label>
                             <select id="fecha-de-publicacion" v-model="filtro.fecha_publicacion" class="fecha-de-publicacion">
                                 <option value="">Todas las fechas</option>
-                                <!--<option value="hoy">Hoy</option>
-                                <option value="ayer">Ayer</option>
-                                <option value="menor-a-3-dias">Menor a 3 días</option>
-                                <option value="menor-a-4-dias">Menor a 4 días</option>
-                                <option value="menor-a-5-dias">Menor a 5 días</option>
-                                <option value="menor-a-6-dias">Menor a 6 días</option>
-                                <option value="menor-a-7-dias">Menor a 1 semana</option>
-                                <option value="menor-a-15-dias">Menor a 15 días</option>-->
                             </select>
                         </div>
-                        <button class="verSeleccion">Ver selección</button>
+                        <button class="verSeleccion" onclick="window.location.href='pages/ver-seleccion.html'">Ver selección</button>
                     </div>
                 </section>
             </div>
@@ -269,6 +236,5 @@
 <script src="assets/js/empleos_hoy.js"></script>
 <script src="assets/js/hamburguesa.js"></script>
 <script src="assets/js/logueado.js"></script>
-
 </body>
 </html>

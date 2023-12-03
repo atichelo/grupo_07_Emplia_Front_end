@@ -24,4 +24,5 @@ fetch('http://localhost:5000/empleoshoy')
             option.text = fecha_publicacion;
             selectFechaPublicacion.appendChild(option);
         });
+        
     });
