@@ -23,10 +23,14 @@
     <main>
         <section class="registro-usuario"> 
             <div class="registro-form">
-                <h2>Registro de Usuario</h2>
-                <button id="google-btn" class="icono-registro"><img src="../assets/icons/googlei.ico" alt="Google Icon"></button>
-                <button id="facebook-btn" class="icono-registro"><img src="../assets/icons/facebooki.ico" alt="Facebook Icon"></button>
-                <button id="linkedin-btn" class="icono-registro"><img src="../assets/icons/linkedini.ico" alt="LinkedIn Icon"></button>
+                <div class="centrado">
+                    <h1>Registro de Usuario</h1>
+                    <div class="iconos">
+                        <button id="google-btn" class="icono-registro"><img src="../assets/icons/googlei.ico" alt="Google Icon"></button>
+                        <button id="facebook-btn" class="icono-registro"><img src="../assets/icons/facebooki.ico" alt="Facebook Icon"></button>
+                        <button id="linkedin-btn" class="icono-registro"><img src="../assets/icons/linkedini.ico" alt="LinkedIn Icon"></button>
+                    </div>
+                </div>
                 <form>
                     <div class="input-container">
                         <input type="text" name="nombre_usuario" placeholder="Nombre de usuario" class="icon-input user-icon" required />
@@ -53,10 +57,20 @@
                         <input type="text" name="domicilio" placeholder="Domicilio" class="icon-input user-icon" required />
                     </div>
                     <div class="input-container">
-                        <input type="file" name="foto" placeholder="Subir foto" class="icon-input user-icon" accept="image/*" />
+                        <input type="text" id="location" name="localidad" placeholder="Localidad" class="icon-input user-icon" required list="location-list" />
+                        <datalist id="location-list"></datalist>
+                    </div>
+                    <div class="input-container">
+                        <input type="text" id="province" name="provincia" placeholder="Provincia" class="icon-input user-icon" required list="province-list" />
+                        <datalist id="province-list"></datalist>
+                    </div>
+                    <div class="input-container">
+                        <label for="foto" class="custom-file-upload icon-input user-icon">Subir foto</label>
+                        <input type="file" id="foto" name="foto" style="display: none;" accept="image/*" />
                     </div>
                     <button type="submit" class="confirmarRegistro">Registrarse</button>
                 </form>
+                
             </div> 
         </section>        
     </main>
@@ -105,5 +119,6 @@
     </footer>
     <!--<script type="module" src="../assets/js/registrog.js"></script>-->
     <script src="../assets/js/crea.js"></script>
+    <script src="../assets/js/localidades.js"></script>
 </body>
 </html>

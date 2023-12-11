@@ -5,3 +5,11 @@ jQuery(function($) {
         });
     });
 });
+jQuery(function($) {
+    $.get("http://localhost:5000/bdlocalidades", function(data){
+        data.forEach(function(localidad){
+            $('#location-select').append(new Option(localidad, localidad));
+        });
+    });
+});
+

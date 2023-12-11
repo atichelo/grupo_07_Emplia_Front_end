@@ -29,6 +29,29 @@ input[type="file"]:focus {
   border-color: var(--color-secundario);
   box-shadow: 0px 0px 5px rgba(4, 137, 152, 0.5); 
 }
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+  background: linear-gradient(to right, var(--color-principal), var(--color-secundario));
+  color:var(--color-terciario);
+  border-color: var(--color-secundario);
+  box-shadow: 0px 0px 5px rgba(4, 137, 152, 0.5);
+  border-radius: var(--radio-borde-general);
+  text-align: center; 
+}
+
+.custom-file-upload:hover {
+  background: linear-gradient(to right, var(--color-secundario), var(--color-principal));
+}
+.centrado {
+  text-align: center;
+}
+
+.iconos {
+  display: flex;
+  justify-content: center;
+}
 
 button.icono-registro {
   width: auto;
@@ -45,6 +68,7 @@ button.icono-registro img {
     height:auto;
     padding: var(--padding-general);
 }
+
 .confirmarRegistro[type="submit" i], 
 .continuarBtn,
 .continuarBtn1 {
@@ -147,7 +171,7 @@ button.icono-registro img {
 }
 
 .job-select,
-.location-input {
+.location-select {
   width: calc(var(--ancho-input-texto) - 30px);
   height: 40px;
   font-size: var(--tamano-fuente-p);
@@ -166,7 +190,7 @@ button.icono-registro img {
   appearance: none; /* Elimina el estilo predeterminado del navegador */
 }
 
-.location-input {
+.location-select {
   width: 268.400px;
   height: 38.400px;
   padding: 0px;
@@ -177,14 +201,14 @@ button.icono-registro img {
   display: block;
 }
 
-.location-input.location-icon {
+.location-select.location-icon {
   background-image: url("D:/Documents/grupo_07_Emplia_frontend/Emplia/assets/icons/marcador.ico");
   display: block;
 }
 
 .icon-input:hover,
 .job-select:hover,
-.location-input:hover {
+.location-select:hover {
   background-color: var(--color-quinario);
 }
 
@@ -206,10 +230,27 @@ button[type="submit"]:hover {
   background-color: var(--color-cuaternario);
   color: var(--color-terciario);
 }
+.button-search {
+    text-decoration: none;
+    font-weight: bold;
+    padding: var(--padding-general);
+    border-radius: var(--radio-borde-general);
+    font-family: var(--fuente-principal);
+    font-size: var(--tamano-fuente-p);
+    width: var(--ancho-logose);
+    border: 2px solid var(--color-terciario);
+    background-color: var(--color-secundario);
+    color: var(--color-terciario);
+    margin-left: 0;
+}
+.button-search:hover {
+  background-color: var(--color-cuaternario);
+  color: var(--color-terciario);
+}
 
 @media screen and (max-width: 600px) {
   .banner {
-    height: 20vh; /* Reduce la altura del banner */
+    height: 30vh; /* Ajusta la altura del banner */
   }
 
   #myVideo {
@@ -218,40 +259,52 @@ button[type="submit"]:hover {
 
   .form-wrapper {
     bottom: -10%; /* Modifica la posición del formulario */
-    width: 100%; /* Reduce el ancho del formulario */
-    height: 80px; /* Reduce la altura del formulario */
+    width: 100%; /* Ajusta el ancho del formulario */
+    height: 100px; /* Ajusta la altura del formulario */
   }
 
   .job-search-form {
-    flex-direction: row; /* Cambia la dirección del contenedor a columna */
+    flex-direction: column; /* Cambia la dirección del contenedor a columna */
     align-items: stretch; /* Estira los elementos a lo ancho del contenedor */
     width: 100%;
   }
 
   .job-select {
-    width: 120%;
-    margin-right: 100px; /* Elimina el margen derecho */
-    flex-direction: row;
-    height: 56px;
+    width: 100%; /* Ajusta el ancho del selector de trabajo */
+    margin-right: 0; /* Elimina el margen derecho */
+    height: 30px;
+    margin-bottom: 5px;
   }
-  .location-input {
-    width: 80%;
-    margin-left: 28px; /* Elimina el margen derecho */
-    flex-direction: row;
-    height: 55.5px;
+  .location-select {
+    width: 100%; /* Ajusta el ancho del selector de ubicación */
+    margin-left: 0; /* Elimina el margen izquierdo */
+    height: 30px;
+    margin-bottom: 5px;
   }
   button[type="submit"] {
-    margin-left: 10px;
-    width: 40%;
+    margin-left: 0;
+    width: 100%; /* Ajusta el ancho del botón de envío */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  .button-search {
+    margin-left: 0;
+    width: 100%; /* Ajusta el ancho del botón de envío */
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
   }
   .job-select.job-icon {
-    background-image:none
-  }
-  .location-input.location-icon {
     background-image: none;
   }
-  
+  .location-select.location-icon {
+    background-image: none;
+  }
 }
+
 /* Estilos para la sección de logo */
 section {
   background-color: #f8f8f8; 
@@ -287,14 +340,14 @@ section {
 /* Estilos para pantallas pequeñas (menores a 768px) */
 @media screen and (max-width: 600px) {
   .logos {
-    max-height: none; /* Elimina la restricción de altura */
-    flex-direction: row; /* Cambia la dirección a columna */
+    width: 0px; 
+    height: 0px;
   }
 
   .logos img {
-    height: var(--tamano-logose) / 4; /* Reduce la altura de las imágenes */
-    margin-right: 0; /* Elimina el margen derecho */
-    
+    width: 0px;
+    height: 0px; 
+    margin-right: 0; 
   }
   section {
     background-color: #f8f8f8; 
@@ -302,6 +355,7 @@ section {
     text-align: center; 
   }
 }
+
 .search-section input[type="text"] {
   margin-top: calc(var(--margen-general) + 20px);
 }
@@ -591,9 +645,68 @@ table.empleos {
   padding: var(--padding-general);
 }
 
+@media screen and (max-width: 600px) {
+  .search-section input[type="text"] {
+    margin-top: calc(var(--margen-general) + 20px);
+  }
+
+  .contenedor-principal {
+    flex-direction: column; 
+  }
+
+  .container {
+    width: 100%; 
+    margin-right: 0; 
+  }
+
+  .empresa-cont {
+    flex-direction: column; 
+  }
+
+  .filtros, .empleos, .empresa {
+    width: 90%; 
+    margin-left: 8px;
+  }
+
+  .empresa-logo {
+    width: 50%; 
+    height: auto; 
+  }
+
+  .empresa-nombre, .empresa-sector, .empresa-sectorp, .empresa-sectore {
+    width: 90%; 
+    margin-right: 0; 
+    margin-left: 0; 
+  }
+
+  .verSeleccion, .empresa-boton {
+    width: 100%; 
+  }
+
+  .destacados {
+    grid-template-columns: 1fr; 
+    width: 90%; 
+  }
+
+  .btn-destacado {
+    width: 85%; 
+  }
+
+  .testimonios ul {
+    flex-direction: column; 
+  }
+
+  .testimonios ul li img {
+    width: 50%; 
+    height: auto; 
+  }
+}
+
 .display-4 {
   color: var(--color-principal);
   font-size: var(--tamano-fuente-h1-banner);
+  font-family: 'arial';
+  font-weight: bold;
 }
 
 .mb-3 {
@@ -693,6 +806,28 @@ button.cv:hover {
   border-radius: var(--radio-borde-general);
   cursor:pointer;
 }
+.btncv {
+  text-decoration: none;
+  font-weight: bold;
+  padding: var(--padding-general);
+  border-radius: var(--radio-borde-general);
+  font-family: var(--fuente-principal);
+  font-size: var(--tamano-fuente-p);
+  width: var(--ancho-logose);
+  border: 2px solid var(--color-terciario);
+  background-color: var(--color-secundario);
+  color: var(--color-terciario);
+  margin-left: 0;
+  height: 5%;
+  width: var(--ancho-button-cv);
+  margin-top: var(--margen-general);
+  margin-bottom: var(--margen-general);
+}
+.btncv:hover {
+  background-color: var(--color-terciario);
+  border: 2px solid var(--color-secundario);
+  color: var(--color-secundario);
+}
 .step-form {
   display: none;
 }
@@ -776,18 +911,19 @@ a {
   .cuenta,
   .olvidaste,
   a {
-    width: 100%;
+    width: 90%;
     padding: var(--padding-general);
     margin-top: var(--margen-general);
   }
 
   .login-container input[type="text"],
   .login-container input[type="password"] {
-    width: 100%;
+    width: 90%;
   }
 
   .login-container button {
-    width: 100%;
+    width: 50%;
+    margin-right: 15px;
   }
 }
 .recuperar-container {
@@ -799,7 +935,6 @@ a {
   border-radius: var(--radio-borde-general);
   margin-top: var(--margen-general);
 }
-
 
 .recupera button {
   width: 15%;
@@ -933,7 +1068,6 @@ table td button:hover {
       width: 100%;
   }
 
- 
   #formEmpleo input[type="text"],
   #formEmpleo textarea {
       width: 100%;
@@ -944,8 +1078,16 @@ table td button:hover {
       width: 100%;
   }
 
-  /* Estilos para la ventana modal */
   #formActualizar {
       width: 90%;
   }
+}
+
+input[type="checkbox"] {
+  width: 20px; 
+  height: 20px; 
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--color-secundario)!important
 }

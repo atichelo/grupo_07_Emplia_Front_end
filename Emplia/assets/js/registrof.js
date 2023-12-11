@@ -6,7 +6,7 @@ document.querySelector("form").addEventListener('submit', function(event) {
     var usuarioElem = document.querySelector('input[name="uname"]');
     var contrasenaElem = document.querySelector('input[name="psw"]');
 
-    // Si los elementos existen, obtén sus valores
+    // Si los elementos existen, se obtienen los resultados.
     var usuario = usuarioElem ? usuarioElem.value : null;
     var contrasena = contrasenaElem ? contrasenaElem.value : null;
 

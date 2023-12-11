@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
         var correo = document.querySelector('input[name="correo"]').value;
         var telefono = document.querySelector('input[name="telefono"]').value;
         var domicilio = document.querySelector('input[name="domicilio"]').value;
+        var localidad = document.querySelector('input[name="localidad"]').value;
+        var provincia = document.querySelector('input[name="provincia"]').value;
         var foto = document.querySelector('input[name="foto"]').files[0];
 
         if (contrasena !== confirmar_contrasena) {
@@ -32,6 +34,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             correo: correo,
             telefono: telefono,
             domicilio: domicilio,
+            localidad: localidad,
+            provincia: provincia,
             foto: foto ? URL.createObjectURL(foto) : null
         };
 

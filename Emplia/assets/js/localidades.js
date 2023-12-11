@@ -1,6 +1,6 @@
-document.getElementById('location-input').addEventListener('input', function(e) {
+document.getElementById('location').addEventListener('input', function(e) {
     let nombre = e.target.value;
-    if (nombre.length > 0) {
+    if (nombre.length > 2) {
         obtenerLocalidades(nombre);
     }
 });
@@ -29,3 +29,20 @@ function obtenerLocalidades(nombre) {
             console.log('Hubo un problema con la petición Fetch:' + e.message);
         });
 }
+document.getElementById('province').addEventListener('input', function() {
+    var input = this.value;
+    if (input.length > 2) {
+        fetch('https://apis.datos.gob.ar/georef/api/provincias?nombre=' + input + '*')
+            .then(response => response.json())
+            .then(data => {
+                var list = document.getElementById('province-list');
+                list.innerHTML = '';
+                data.provincias.forEach(function(item) {
+                    var option = document.createElement('option');
+                    option.value = item.nombre;
+                    list.appendChild(option);
+                });
+            })
+            .catch(error => console.error('Error:', error));
+    }
+});

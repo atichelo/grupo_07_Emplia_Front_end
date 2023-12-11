@@ -72,6 +72,12 @@ header {
   background-color: var(--color-secundario);
   color: var(--color-terciario);
 }
+@media (max-width: 600px) {
+  .menu-btn .ingresar::before{ 
+    content: "→";
+    color: var(--color-cuaternario);
+  }
+}
 
 .crear-cuenta {
   background-color: var(--color-secundario);

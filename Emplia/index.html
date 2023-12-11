@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>esteJobs</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/css/select2.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
@@ -16,7 +16,7 @@
         </div>
         <nav>
             <ul class="menu">
-                <li><button class="menu-btn cuenta-empresas">Cuenta empresas</button></li>
+                <li><a href="pages/empresas.html"><button class="menu-btn cuenta-empresas">Cuenta empresas</button></a></li>
                 <li><button class="menu-btn publica-gratis"><a href="pages/publicar-empleo.html">Publicar empleos</a></button></li>
                 <li><button class="menu-btn crear-cuenta"><a href="pages/crear-cuenta.html">Crear cuenta</a></button></li>
                 <li><button id="userMenu" class="menu-btn ingresar"><a href="pages/ingresar.html">Ingresar</a></button></li>
@@ -24,7 +24,7 @@
             <button class="hamburger">☰</button>
             <div class="menu-desplegable">
                 <ul class="menuh">
-                    <li><a href="#cuenta-empresas">Cuenta empresas</a></li>
+                    <li><a href="pages/empresas.html">Cuenta empresas</a></li>
                     <li><a href="pages/publicar-empleo.html">Publicar empleos</a></li>
                     <li><a href="pages/crear-cuenta.html">Crear cuenta</a></li>
                     <li><a href="pages/ingresar.html">Ingresar</a></li>
@@ -45,10 +45,11 @@
                         </select>
                     </div>
                     <div class="input-container">
-                        <input list="location-list" id="location-input" class="location-input location-icon" placeholder="Ingresar ubicación">
-                        <datalist id="location-list"></datalist>
+                        <select id="location-select" class="location-select location-icon" placeholder="Ingresar ubicación">
+                            <option value=""> Localidad </option>
+                        </select>
                     </div>
-                    <button type="submit" class="button-search">Buscar empleo</button>     
+                    <button type="button" class="button-search" onclick="window.location.href='./pages/buscar.html'">Buscar empleo</button>     
                 </form>
             </div>
         </section>
@@ -89,7 +90,7 @@
                                 <option value="">Todas las fechas</option>
                             </select>
                         </div>
-                        <button class="verSeleccion" onclick="window.location.href='pages/ver-seleccion.html'">Ver selección</button>
+                        <button class="verSeleccion" onclick="window.location.href='./pages/ver-seleccion.html'">Ver selección</button>
                     </div>
                 </section>
             </div>
@@ -231,7 +232,8 @@
             </div>
         </div>
     </footer>
-<script src="assets/js/localidades.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
 <script src="assets/js/bdempleos.js"></script>
 <script src="assets/js/empleos_hoy.js"></script>
 <script src="assets/js/hamburguesa.js"></script>

@@ -22,8 +22,21 @@ document.addEventListener('DOMContentLoaded', function() {
             body: JSON.stringify(nuevoEmpleo)
         })
         .then(response => response.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log(data);
+            limpiarFormulario(); // Llama a la función para limpiar el formulario
+        })
         .catch(error => console.error('Error:', error));
+    }
+
+    function limpiarFormulario() {
+        document.getElementById('nombre_empresa').value = '';
+        document.getElementById('area').value = '';
+        document.getElementById('nombre_puesto').value = '';
+        document.getElementById('descripcion').value = '';
+        document.getElementById('modalidad').value = '';
+        document.getElementById('fecha_publicacion').value = '';
+        document.getElementById('localidad').value = '';
     }
 
     fetch('http://localhost:5000/empleos')
@@ -104,16 +117,9 @@ function actualizarEmpleo() {
         body: JSON.stringify(actualizacionEmpleo)
     })
     .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
-    cerrarVentanaModal();
-}
-
-function eliminarEmpleo(id) {
-    fetch(`http://localhost:5000/empleos/${id}`, {
-        method: 'DELETE'
+    .then(data => {
+        console.log(data);
+        cerrarVentanaModal();
     })
-    .then(response => response.json())
-    .then(data => console.log(data))
     .catch(error => console.error('Error:', error));
 }
